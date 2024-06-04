@@ -5,8 +5,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
 
-    if (empty($username) || empty($password) || empty($password_confirm)) {
+    if (empty($username) || empty($password) || empty($password_confirm) || empty($firstname) || empty($lastname)) {
         $error_message = "Tüm alanları doldurun.";
     } elseif ($password !== $password_confirm) {
         $error_message = "Şifreler eşleşmiyor.";
@@ -24,8 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // Yeni kullanıcıyı ekle
-            $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
-            $stmt->bind_param("ss", $username, $hashed_password);
+            $stmt = $conn->prepare("INSERT INTO users (username, password, firstname, lastname) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $username, $hashed_password, $firstname, $lastname);
 
             if ($stmt->execute()) {
                 header('Location: signin.php');
@@ -113,6 +115,14 @@ $conn->close();
         <div class="form-container">
             <h2>Register</h2>
             <form action="register.php" method="POST">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+                </div>
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>

@@ -63,14 +63,18 @@ $conn->close();
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background-image: url('assets\\hero-1.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .form-container {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8); /* Arkaplanı %80 şeffaf beyaz yapar */
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             padding: 40px;
             width: 300px;
+            margin: 0 auto; /* Form container'ı sayfanın ortasına hizala */
         }
 
         .form-container h2 {
@@ -80,12 +84,14 @@ $conn->close();
 
         .form-group {
             margin-bottom: 20px;
+            
         }
 
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            
         }
 
         .form-group input {
@@ -93,16 +99,17 @@ $conn->close();
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            
         }
 
         .form-group input[type="submit"] {
-            background-color: #007bff;
+            background-color: black;
             color: #fff;
             cursor: pointer;
         }
 
         .form-group input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color:  red;
         }
     </style>
 </head>

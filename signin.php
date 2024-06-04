@@ -105,8 +105,7 @@ $conn->close();
         }
     </style>
 </head>
-<!-- EFEKAN EFE 20091000045 -->
-<body>
+
     <div class="container">
         <div class="form-container">
             <h2>Sign In</h2>

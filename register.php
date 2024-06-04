@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $conn->close();
 ?>
 
-<!-- EFEKAN EFE 20091000045 -->
+
 
 
 <!DOCTYPE html>

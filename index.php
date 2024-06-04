@@ -35,7 +35,11 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
 <body>
 
 <div class="topBar">
-        <div class="topBarLeftArea">
+<div class="topBarLeftArea">
+            <?php if ($_SESSION['role'] === 'admin'): ?>
+                <a href="admin_panel.php" class="fontTopBar">Admin Paneli</a> <!-- Admin Paneli bağlantısı -->
+                <span>/</span>
+            <?php endif; ?>
             <i class="fa-regular fa-clock"></i>
             <p class="fontTopBar"><?php echo $current_date; ?> </p>
             <span>/</span>

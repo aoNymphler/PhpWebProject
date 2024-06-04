@@ -7,17 +7,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
 
     // Kullanıcı bilgilerini kontrol et
-    $stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
+    $stmt = $conn->prepare("SELECT id, password, firstname, lastname, role FROM users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($stored_password);
+        $stmt->bind_result($id, $stored_password, $firstname, $lastname, $role);
         $stmt->fetch();
 
         if (password_verify($password, $stored_password)) {
             $_SESSION['user'] = $username;
+            $_SESSION['firstname'] = $firstname;
+            $_SESSION['lastname'] = $lastname;
+            $_SESSION['role'] = $role; // Rolü oturum değişkenine kaydedin
             header('Location: index.php');
             exit();
         } else {
@@ -32,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $conn->close();
 ?>
-
 
 
 
@@ -104,7 +106,6 @@ $conn->close();
     </style>
 </head>
 <!-- EFEKAN EFE 20091000045 -->
-
 <body>
     <div class="container">
         <div class="form-container">

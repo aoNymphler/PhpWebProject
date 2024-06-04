@@ -1,16 +1,25 @@
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('Location: signin.php');
+    exit();
+}
+
+date_default_timezone_set('Europe/Istanbul'); // Zaman dilimini ayarlayın
+$current_date = date('M d, Y'); // Tarih formatını ayarlayın
+$current_time = date('H:i'); // Saat formatını ayarlayın
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
     <title>Halic University</title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" contents="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/index.css">
-    <!-- <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="./css/owl.carousel.min.css"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,16 +34,22 @@
 
 <body>
 
-    <div class="topBar">
-        <div class="topBarLeftArea">
+<div class="topBar">
+<div class="topBarLeftArea">
+            <?php if ($_SESSION['role'] === 'admin'): ?>
+                <a href="admin_panel.php" class="fontTopBar">Admin Paneli</a> <!-- Admin Paneli bağlantısı -->
+                <span>/</span>
+            <?php endif; ?>
             <i class="fa-regular fa-clock"></i>
-            <p class="fontTopBar">Aug 01, 2024 </p>
+            <p class="fontTopBar"><?php echo $current_date; ?> </p>
             <span>/</span>
             <i class="fa-solid fa-gear"></i>
-            <p class="fontTopBar">EFEKAN EFE </p>
+            <p class="fontTopBar">
+                <?php echo htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']); ?>
+            </p>
             <span>/</span>
             <i class="fa-solid fa-right-to-bracket"></i>
-            <p class="fontTopBar">Sign Out </p>
+            <p class="fontTopBar"><a href="signin.php">Sign Out</a></p>
         </div>
         <div class="images">
             <i class="fa-brands fa-facebook-f"></i>

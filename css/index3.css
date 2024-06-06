@@ -40,6 +40,19 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.fontTopBar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.fontTopBar a:hover {
+    color: red;
+}
+
+.fontTopBar a:active {
+    color: inherit;
+}
+
 .images a {
     margin-left: 10px;
 }
@@ -76,7 +89,6 @@ body {
     transform: skew(-15deg);
 }
 
-
 .menu a {
     width: 140px;
     font-size: 15px;
@@ -84,7 +96,6 @@ body {
     display: block;
     background-color: rgb(168, 29, 29);
 }
-
 
 .menu a:hover {
     background-color: rgb(194, 8, 15);
@@ -97,7 +108,6 @@ body {
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-
 }
 
 .pictureMain {
@@ -140,8 +150,6 @@ body {
     padding: 15px;
 }
 
-
-
 .boxMain {
     width: 17px;
     height: 19px;
@@ -162,12 +170,15 @@ body {
 
 .imagesdivpositionmainbox1 {
     height: 105px;
-    width: 360px;
+    width: 340px;
+}
+
+.imagesdivpositionmainbox2 {
+    height: 105px;
+    width: 290px;
 }
 
 .imagebox1 {
-
-
     height: 90px;
     width: 90px !important;
 }
@@ -175,31 +186,60 @@ body {
 .areaBox {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
+.latestPreview {
+    width: 100%;
+    height: 100px;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 20px;
 
-.font10 {
-    display: inline-block;
-    color: rgb(195, 195, 195);
-    font-size: 13px;
-    font-weight: 600;
+}
+
+.centerpictures {
+    width: 100%;
+    height: 480px;
+
+}
+.cp {
+    margin-left: 13.5%;
+    margin-right: 13.5%;
+}
+
+.imagebox2 {
+    height: 180px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    width: 100% !important;
+    margin-bottom: 10px;
+
+}
+
+.imagesdivpositionmainbox99 {
+    margin-top: 20px;
+    padding: 0 10px;
+    max-width: 100% !important;
+    margin-bottom: 10%;
+
+}
+
+/* başlıklar için kalsın  */
+/* .fontSlider {
     text-transform: uppercase;
-
+    text-align: left;
+    color: white;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+ */
 
 
 
@@ -268,7 +308,7 @@ body {
 
 .fdiv1 {
     width: 25%;
-  
+
 }
 
 .fdiv2 {
@@ -279,7 +319,7 @@ body {
 
 .fdiv3 {
     width: 25%;
-   
+
 }
 
 .bottomFont1 {
@@ -312,6 +352,18 @@ body {
     margin-top: 10px;
 }
 
+.font9Price {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 10px;
+}
+
+
 
 
 .boxB {
@@ -334,8 +386,6 @@ body {
 }
 
 .imagesdivposition {
-
-   
     height: 105px;
 
 }
@@ -343,10 +393,12 @@ body {
 .font10 {
     display: inline-block;
     color: rgb(195, 195, 195);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 170%;
     font-weight: 600;
     text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 20px;
 
 }
 
@@ -361,7 +413,7 @@ body {
 
 .font611 {
     display: inline;
-   
+
 }
 
 

@@ -14,13 +14,16 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Halic University</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" contents="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/index3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -31,17 +34,17 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300&display=swap"
         rel="stylesheet">
 </head>
-
 <body>
-
-<div class="topBar">
-<div class="topBarLeftArea">
+    <div class="topBar">
+        <div class="topBarLeftArea">
             <?php if ($_SESSION['role'] === 'admin'): ?>
-                <a href="admin_panel.php" class="fontTopBar">Admin Paneli</a> <!-- Admin Paneli bağlantısı -->
-                <span>/</span>
+            <a href="admin_panel.php" class="fontTopBar">Admin Paneli</a> <!-- Admin Paneli bağlantısı -->
+            <span>/</span>
             <?php endif; ?>
             <i class="fa-regular fa-clock"></i>
-            <p class="fontTopBar"><?php echo $current_date; ?> </p>
+            <p class="fontTopBar">
+                <?php echo $current_date; ?>
+            </p>
             <span>/</span>
             <i class="fa-solid fa-gear"></i>
             <p class="fontTopBar">
@@ -69,21 +72,18 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                         <p style="transform: skew(15deg);">HOME</p>
                     </a></li>
                 <li><a href="#">
-                        <p>PLATFORM <i class="fa fa-angle-down fa-xs"></i></p>
+                        <p>STORE <i class="fa fa-angle-down fa-xs"></i></p>
                     </a></li>
                 <li>
                     <a href="#" style="width: 110px;">
-                        <p>PAGES <i class="fa fa-angle-down fa-xs"></i></p>
+                        <p>LIBRARY <i class="fa fa-angle-down fa-xs"></i></p>
                     </a>
                 </li>
                 <li><a href="#">
-                        <p>REVIEWS <i class="fa fa-angle-down fa-xs"></i></p>
+                        <p>TRENDS <i class="fa fa-angle-down fa-xs"></i></p>
                     </a></li>
                 <li><a href="#">
                         <p>SUPPORT <i class="fa fa-angle-down fa-xs"></i></p>
-                    </a></li>
-                <li><a href="#" style="width: 110px;">
-                        <p>VIDEOS <i class="fa fa-angle-down fa-xs"></i></p>
                     </a></li>
             </div>
         </ul>
@@ -92,57 +92,183 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
         <div class="pictureMain">
             <div class="maindiv1">
                 <p class="font3">PLAYSTATION AND PC GAMES</p>
-                <h3 class="font4">Downwell and space hulk: tactics are coming to xbox game pass for PC</h3>
+                <h3 class="font4">Welcome to Your Gaming Haven! Get ready for endless adventures!</h3>
             </div>
             <div class="maindiv2">
-                <div>
-                    <div style="text-align: center;">
-                        <div class="boxMain" style="margin-left: 10px;"></div>
-                        <h3 class="font17"><i>TREDING POSTS</i></h3>
+                <div style="text-align: center;">
+                    <div class="boxMain" style="margin-left: 10px;"></div>
+                    <h3 class="font17"><i>TREDING POSTS</i></h3>
+                </div>
+                <div style="padding-top: 30px;" id="centerSlider">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="latestPreview">
+        <div>
+            <div class="boxB"></div>
+            <i>New & Trending</i>
+        </div>
+    </div>
+    <div class="centerpictures">
+        <div class="cp">
+            <div class="center-slider owl-carousel owl-theme">
+            <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99" >
+                        <img src="././assets/center/c11.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">19.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">534</span>
+                            </div>
                     </div>
-                    <div style="padding-top: 30px;">
-                        <div>
-                            <div class=" imagesdivpositionmainbox1">
-                                <div class="areaBox">
-                                    <img src="././assets/maindiv2img/trending-1.jpg" class="imagebox1">
-                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br> ROACH
-                                        CONCERT...
-                                    </p><br>
-                                </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c22.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">29.99$</span> 
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">250</span>
                             </div>
-                            <div class=" imagesdivpositionmainbox1">
-                                <div class="areaBox">
-                                    <img src="././assets/maindiv2img/trending-2.jpg" class="imagebox1">
-                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br> ROACH
-                                        CONCERT...
-                                    </p><br>
-                                </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c33.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">5.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">126</span>
                             </div>
-                            <div class=" imagesdivpositionmainbox1">
-                                <div class="areaBox">
-                                    <img src="././assets/maindiv2img/trending-3.jpg" class="imagebox1">
-                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br> ROACH
-                                        CONCERT...
-                                    </p><br>
-                                </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c4.PNG" class="imagebox2">
+                      
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">12.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">823</span>
                             </div>
-                            <div class=" imagesdivpositionmainbox1">
-                                <div class="areaBox">
-                                    <img src="././assets/maindiv2img/trending-4.jpg" class="imagebox1">
-                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br> ROACH
-                                        CONCERT...
-                                    </p><br>
-                                </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c5.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">20.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">132</span>
                             </div>
-                            <div class=" imagesdivpositionmainbox1">
-                                <div class="areaBox">
-                                    <img src="././assets/maindiv2img/trending-1.jpg" class="imagebox1">
-                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br> ROACH
-                                        CONCERT...
-                                    </p><br>
-                                </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c6.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">5.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">123</span>
                             </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c7.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">30.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">614</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c8.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">18.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">392</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c9.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">5.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">435</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c5.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">20.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">343</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c22.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">20.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">544</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c33.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">10.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">132</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
+                        <img src="././assets/center/c4.PNG" class="imagebox2">
+                            <div style="display: inline;">
+                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                                <span class="font9Price">20.99$</span>
+                                <span class="font9">/</span>
+                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                <span class="font9">12</span>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -153,7 +279,8 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
             <div class="bottomAreaMainDiv">
                 <div class="fdiv1">
                     <img src="./assets/logo.png" style="height: 75px; margin-top: 30px;" />
-                    <p class="bottomFont1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    <p class="bottomFont1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod
                         tempor
                         incididunt ut labore et dolore magna aliqua lacus vel facilisis.</p>
                     <div style="display: inline-block; margin-top: 55px; transform: skew(-15deg); ">
@@ -174,20 +301,22 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                             <i class="font12">EDITOR'S CHOICE</i><br><br>
                         </div>
                         <div>
-                            <div class=" imagesdivpositionmainbox1">
+                            <div class=" imagesdivpositionmainbox2">
                                 <div class="areaBox">
-                                    <img src="././assets/finalpart2/editor-1.png"
+                                    <img src="././assets/finalpart2/c11.PNG"
                                         style="display:inline-block; height: 90px;">
-                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br> ROACH
+                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br>
+                                        ROACH
                                         CONCERT...
                                     </p><br>
                                 </div>
                             </div>
-                            <div class=" imagesdivpositionmainbox1">
+                            <div class=" imagesdivpositionmainbox2">
                                 <div class="areaBox">
-                                    <img src="././assets/finalpart2/editor-2.png"
+                                    <img src="././assets/finalpart2/c8.PNG"
                                         style="display:inline-block; height: 90px;">
-                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br> ROACH
+                                    <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br>
+                                        ROACH
                                         CONCERT...
                                     </p><br>
                                 </div>
@@ -216,7 +345,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
             <div style="border-top: 1px solid #545454;"></div>
             <div class="fp22">
                 <div>
-                    <p class="font15"> This template is made with ❤️ by Halic
+                    <p class="font15"> This template was made for Halic University.
                     </p>
                 </div>
                 <div class="fp23">
@@ -228,10 +357,11 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
             </div>
         </div>
     </div>
-
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./app.js"></script>
 </body>
-
 </html>

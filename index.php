@@ -349,10 +349,9 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                     </p>
                 </div>
                 <div class="fp23">
-                    <a href=""><span class="font14">About</span></a>
-                    <a href=""><span class="font14">Subscribe</span></a>
+                    <a href="about.php"><span class="font14">About</span></a>
                     <a href=""><span class="font14">Contact</span></a>
-                    <a href=""><span class="font14">Support</span></a>
+                    <a href="support.php"><span class="font14">Support</span></a>
                 </div>
             </div>
         </div>

@@ -97,7 +97,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
             <div class="maindiv2">
                 <div style="text-align: center;">
                     <div class="boxMain" style="margin-left: 10px;"></div>
-                    <h3 class="font17"><i>TREDING POSTS</i></h3>
+                    <h3 class="font17"><i>TRENDING POSTS</i></h3>
                 </div>
                 <div style="padding-top: 30px;" id="centerSlider">
                 

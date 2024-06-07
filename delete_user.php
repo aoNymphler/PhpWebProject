@@ -8,21 +8,28 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'admin') {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user_id = $_POST['user_id'];
+// Gelen user_id'yi al
+$user_id = $_POST['user_id'];
 
-    // Kullanıcıyı veritabanından sil
-    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+// Silinecek kullanıcının rolünü kontrol et
+$sql = "SELECT role FROM users WHERE id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+if ($row['role'] !== 'admin') {
+    // Kullanıcı admin değilse sil
+    $sql = "DELETE FROM users WHERE id = ?";
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $user_id);
-
-    if ($stmt->execute()) {
-        header('Location: admin_panel.php?message=Kullanıcı başarıyla silindi.');
-    } else {
-        header('Location: admin_panel.php?error=Kullanıcı silinirken bir hata oluştu.');
-    }
-
-    $stmt->close();
+    $stmt->execute();
 }
 
+$stmt->close();
 $conn->close();
+
+header('Location: admin_panel.php');
+exit();
 ?>

@@ -66,7 +66,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
     <div class="logo">
         <img src="./assets/logo.png" class="logosize" alt="Örnek Resim" />
     </div>
-    <div class="menu">
+    <div class="menu" >
         <ul>
             <div>
                 <li><a href="#" style="width: 95px; background-color: rgb(194,8,15);">

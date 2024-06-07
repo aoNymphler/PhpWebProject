@@ -12,8 +12,9 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
 ?>
 
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <title>Halic University</title>

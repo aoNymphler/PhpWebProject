@@ -53,7 +53,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                 <?php echo htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']); ?>
             </p>
             <span>/</span>
-            <i class="fa-solid fa-right-to-bracket"></i>
+            <i class="fa-solid fa-right-to-bracket"></i >
             <p class="fontTopBar"><a href="signin.php">Sign Out</a></p>
         </div>
         <div class="images">

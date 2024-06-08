@@ -1,233 +1,269 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(0, 0, 0);
-
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Cinzel', serif;
-    text-decoration: none;
-    list-style-type: none;
-    outline: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Cinzel", serif;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
 }
 
 .topBar {
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .topBar span {
-    margin-left: 10px;
-    color: #8f8f8f;
+  margin-left: 10px;
+  color: #8f8f8f;
 }
 
 .topBarLeftArea i {
-    color: #ffffff;
-    margin-left: 10px;
-    margin-right: 5px;
+  color: #ffffff;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+/* Başlangıç durumu - dropdown gizli */
+.mega-box {
+  position: absolute;
+  top: 85px;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Geçiş efekti */
+}
+
+/* Hover durumu - dropdown görünür */
+li:hover .mega-box {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mega-box .content {
+  background-color: #000; /* Arka plan rengini siyah yap */
+  padding: 100%;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 303px;
+  padding-bottom: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.content .row header,
+.content .row ul li a {
+  color: #fff; /* Yazı rengini beyaz yap */
+}
+
+.content .row ul li a {
+  text-decoration: none; /* Linklerin altı çizgisini kaldır */
+}
+
+.content .row ul li a:hover {
+  text-decoration: underline; /* Linklerin üzerine gelindiğinde altı çizgili yap */
 }
 
 .fontTopBar {
-    display: inline-block;
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-    font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat", sans-serif;
 }
 
 .fontTopBar a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .fontTopBar a:hover {
-    color: red;
+  color: red;
 }
 
 .fontTopBar a:active {
-    color: inherit;
+  color: inherit;
 }
 
 .images a {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .images i {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .logo {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logosize {
-    height: 75px;
+  height: 75px;
 }
 
 .menu {
-    width: 100%;
-    background-color: rgb(158, 5, 10);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  background-color: rgb(158, 5, 10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu ul li {
-    padding: 15px 4px;
-    display: inline-block;
-    line-height: 55px;
-    text-align: center;
-    transform: skew(-15deg);
+  padding: 15px 4px;
+  display: inline-block;
+  line-height: 55px;
+  text-align: center;
+  transform: skew(-15deg);
 }
 
 .menu a {
-    width: 140px;
-    font-size: 15px;
-    color: #ffff;
-    display: block;
-    background-color: rgb(168, 29, 29);
+  width: 140px;
+  font-size: 15px;
+  color: #ffff;
+  display: block;
+  background-color: rgb(168, 29, 29);
 }
 
 .menu a:hover {
-    background-color: rgb(194, 8, 15);
+  background-color: rgb(194, 8, 15);
 }
 
 .mainPicture {
-    width: 100%;
-    height: 1000px;
-    background: url("../assets/hero-1.jpg");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
+  width: 100%;
+  height: 1000px;
+  background: url("../assets/hero-1.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
 }
 
 .pictureMain {
-    height: 1000px;
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
+  height: 1000px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .maindiv1 {
-    width: 585px;
-    padding-bottom: 100px;
+  width: 585px;
+  padding-bottom: 100px;
 }
 
 .font3 {
-    transform: skew(-15deg);
-    display: inline-block;
-    background: rgba(255, 0, 0, 0.2);
-    padding: 9px 10px;
-    color: white;
-    font-weight: 800;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+  transform: skew(-15deg);
+  display: inline-block;
+  background: rgba(255, 0, 0, 0.2);
+  padding: 9px 10px;
+  color: white;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
 }
 
 .font4 {
-    text-align: justify;
-    margin-top: 20px;
-    font-size: 35px;
-    color: white;
+  text-align: justify;
+  margin-top: 20px;
+  font-size: 35px;
+  color: white;
 }
 
 .font6:hover {
-    color: red;
+  color: red;
 }
 
 .maindiv2 {
-    background-color: rgb(0, 0, 0);
-    padding: 15px;
+  background-color: rgb(0, 0, 0);
+  padding: 15px;
 }
 
 .boxMain {
-    width: 17px;
-    height: 19px;
-    margin-top: 30px;
-    background-color: rgb(163, 19, 19);
-    transform: skew(-12deg);
-    display: inline-block;
+  width: 17px;
+  height: 19px;
+  margin-top: 30px;
+  background-color: rgb(163, 19, 19);
+  transform: skew(-12deg);
+  display: inline-block;
 }
 
 .font17 {
-    color: white;
-    display: inline-block;
-    margin-left: 10px;
-    font-size: 23px;
-    letter-spacing: 2px;
-
+  color: white;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 23px;
+  letter-spacing: 2px;
 }
 
 .imagesdivpositionmainbox1 {
-    height: 105px;
-    width: 340px;
+  height: 105px;
+  width: 340px;
 }
 
 .imagesdivpositionmainbox2 {
-    height: 105px;
-    width: 290px;
+  height: 105px;
+  width: 290px;
 }
 
 .imagebox1 {
-    height: 90px;
-    width: 90px !important;
+  height: 90px;
+  width: 90px !important;
 }
 
 .areaBox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .latestPreview {
-    width: 100%;
-    height: 100px;
-    color: white;
-    font-size: 25px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin-bottom: 20px;
-
+  width: 100%;
+  height: 100px;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 20px;
 }
 
 .centerpictures {
-    width: 100%;
-    height: 480px;
-
+  width: 100%;
+  height: 480px;
 }
 .cp {
-    margin-left: 13.5%;
-    margin-right: 13.5%;
+  margin-left: 13.5%;
+  margin-right: 13.5%;
 }
 
 .imagebox2 {
-    height: 180px;
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: contain;
-    width: 100% !important;
-    margin-bottom: 10px;
-
+  height: 180px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  width: 100% !important;
+  margin-bottom: 10px;
 }
 
 .imagesdivpositionmainbox99 {
-    margin-top: 20px;
-    padding: 0 10px;
-    max-width: 100% !important;
-    margin-bottom: 10%;
-
+  margin-top: 20px;
+  padding: 0 10px;
+  max-width: 100% !important;
+  margin-bottom: 10%;
 }
 
 /* başlıklar için kalsın  */
@@ -241,233 +277,160 @@ body {
 }
  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .bottomArea {
-
-    width: 100%;
-    height: 530px;
-
-
+  width: 100%;
+  height: 530px;
 }
 
 .bottomAreaMainDiv {
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-
+  display: flex;
+  justify-content: center;
+  padding: 50px;
 }
 
 .fdiv1 {
-    width: 25%;
-
+  width: 25%;
 }
 
 .fdiv2 {
-    width: 30%;
-    display: flex;
-    justify-content: center;
+  width: 30%;
+  display: flex;
+  justify-content: center;
 }
 
 .fdiv3 {
-    width: 25%;
-
+  width: 25%;
 }
 
 .bottomFont1 {
-    text-align: justify;
-    color: rgb(174, 174, 174);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 160%;
-    margin-top: 20px;
-    font-size: 14px;
-
+  text-align: justify;
+  color: rgb(174, 174, 174);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 160%;
+  margin-top: 20px;
+  font-size: 14px;
 }
 
 .bottomFont2 {
-    background-color: rgb(39, 39, 39);
-    display: inline;
-    padding: 13px 20px;
-    margin-left: 3px;
-
+  background-color: rgb(39, 39, 39);
+  display: inline;
+  padding: 13px 20px;
+  margin-left: 3px;
 }
 
 .font9 {
-    color: white;
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #686868;
-    font-weight: 600;
-    margin-left: 3px;
-    margin-right: 3px;
-    margin-top: 10px;
+  color: white;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #686868;
+  font-weight: 600;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 10px;
 }
 
 .font9Price {
-    display: inline-block;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    color: #ffffff;
-    font-weight: 600;
-    margin-left: 3px;
-    margin-right: 3px;
-    margin-top: 10px;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 10px;
 }
 
-
-
-
 .boxB {
-    width: 13px;
-    height: 19px;
-    background-color: rgb(163, 19, 19);
-    transform: skew(-19deg);
-    display: inline-block;
-
+  width: 13px;
+  height: 19px;
+  background-color: rgb(163, 19, 19);
+  transform: skew(-19deg);
+  display: inline-block;
 }
 
 .font12 {
-    display: inline-block;
-    margin-left: 10px;
-    font-size: 22px;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 2px;
-
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 2px;
 }
 
 .imagesdivposition {
-    height: 105px;
-
+  height: 105px;
 }
 
 .font10 {
-    display: inline-block;
-    color: rgb(195, 195, 195);
-    font-size: 14px;
-    line-height: 170%;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-left: 20px;
-
+  display: inline-block;
+  color: rgb(195, 195, 195);
+  font-size: 14px;
+  line-height: 170%;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 20px;
 }
 
 .font11 {
-    display: inline-block;
-    color: rgb(195, 195, 195);
-    font-size: 13px;
-    line-height: 170%;
-    font-weight: 600;
-
+  display: inline-block;
+  color: rgb(195, 195, 195);
+  font-size: 13px;
+  line-height: 170%;
+  font-weight: 600;
 }
 
 .font611 {
-    display: inline;
-
+  display: inline;
 }
 
-
 .boxfdiv33 {
-    display: inline-block;
-    margin-top: 0px;
-    margin-left: -10px;
-    height: 250px;
-
+  display: inline-block;
+  margin-top: 0px;
+  margin-left: -10px;
+  height: 250px;
 }
 
 .boxfdiv3 {
-    display: inline-block;
-    margin-top: 30px;
-    transform: skew(-10deg);
-
+  display: inline-block;
+  margin-top: 30px;
+  transform: skew(-10deg);
 }
 
 .fp22 {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .fp23 {
-    margin-right: 120px;
-    margin-top: 25px;
+  margin-right: 120px;
+  margin-top: 25px;
 }
 
 .font13 {
-    display: inline;
-    border: 1px solid #4c4c4c;
-    padding: 10px 15px;
-    color: white;
-    font-weight: 800;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    margin-left: 10px;
+  display: inline;
+  border: 1px solid #4c4c4c;
+  padding: 10px 15px;
+  color: white;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  margin-left: 10px;
 }
 
-
 .font14 {
-
-    font-weight: 600;
-    font-size: 15px;
-    font-family: 'Montserrat', sans-serif;
-    color: rgb(203, 202, 202);
-    margin: 0 15px;
-
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(203, 202, 202);
+  margin: 0 15px;
 }
 
 .font15 {
-    color: white;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 30px;
-    margin-left: 35px;
+  color: white;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 30px;
+  margin-left: 35px;
 }

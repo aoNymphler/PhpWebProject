@@ -72,9 +72,43 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                 <li><a href="#" style="width: 95px; background-color: rgb(194,8,15);">
                         <p style="transform: skew(15deg);">HOME</p>
                     </a></li>
-                <li><a href="#">
-                        <p>STORE <i class="fa fa-angle-down fa-xs"></i></p>
-                    </a></li>
+                    <li>
+  <a href="#">
+    <p>STORE <i class="fa fa-angle-down fa-xs"></i></p>
+  </a>
+  <div class="mega-box"> 
+    <div class="content">
+      <div class="row">
+        <header>SPECİES</header>
+        <ul class="mega-links">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Fear</a></li>
+          <li><a href="#">Sport</a></li>
+          <li><a href="#">Race</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <header>KEYS</header>
+        <ul class="mega-links">
+          <li><a href="#">Valorant Keys</a></li>
+          <li><a href="#">CS2 Keys</a></li>
+          <li><a href="#">PUBG Keys</a></li>
+          <li><a href="#">FİFA Keys</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <header>PRİVATE PART</header>
+        <ul class="mega-links">
+          <li><a href="#">Free Game</a></li>
+          <li><a href="#">Demos</a></li>
+          <li><a href="#">Early Access</a></li>
+          <li><a href="#">Anime</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</li>
+
                 <li>
                     <a href="#" style="width: 110px;">
                         <p>LIBRARY <i class="fa fa-angle-down fa-xs"></i></p>
@@ -363,5 +397,6 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
     <script src="./js/owl.carousel.min.js"></script>
     <script src="./js/index.js"></script>
     <script src="./app.js"></script>
+    
 </body>
 </html>

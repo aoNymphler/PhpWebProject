@@ -1,11 +1,11 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(0, 0, 0);
-    background: url("../assets/hero-1.jpg");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0);
+  background: url("../assets/hero-1.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
 
 }
 
@@ -37,29 +37,27 @@ body {
   margin-right: 5px;
 }
 
-/* Başlangıç durumu - dropdown gizli */
 .mega-box {
   position: absolute;
   top: 85px;
-  width: 100%;
+  width: 276px;
   left: 0;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease; /* Geçiş efekti */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Hover durumu - dropdown görünür */
 li:hover .mega-box {
   opacity: 1;
   visibility: visible;
 }
 
 .mega-box .content {
-  background-color: #000; /* Arka plan rengini siyah yap */
+  background-color: #000;
   padding: 100%;
   padding-top: 20px;
-  padding-left: 5px;
-  padding-right: 303px;
+  padding-left: 90px;
+  padding-right: 313px;
   padding-bottom: 20px;
   display: flex;
   width: 100%;
@@ -68,15 +66,16 @@ li:hover .mega-box {
 
 .content .row header,
 .content .row ul li a {
-  color: #fff; /* Yazı rengini beyaz yap */
+  color: #fff;
 }
 
 .content .row ul li a {
-  text-decoration: none; /* Linklerin altı çizgisini kaldır */
+  text-decoration: none;
+ margin-inline: 10px;
 }
 
 .content .row ul li a:hover {
-  text-decoration: underline; /* Linklerin üzerine gelindiğinde altı çizgili yap */
+  text-decoration: underline;
 }
 
 .fontTopBar {
@@ -108,12 +107,12 @@ li:hover .mega-box {
 }
 
 .logo {
-    width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .logosize {
@@ -126,6 +125,8 @@ li:hover .mega-box {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 9999;
 }
 
 .menu ul li {
@@ -134,6 +135,7 @@ li:hover .mega-box {
   line-height: 55px;
   text-align: center;
   transform: skew(-15deg);
+  z-index: 9999;
 }
 
 .menu a {
@@ -142,17 +144,17 @@ li:hover .mega-box {
   color: #ffff;
   display: block;
   background-color: rgb(168, 29, 29);
+  z-index: 9999;
 }
 
 .menu a:hover {
   background-color: rgb(194, 8, 15);
+  z-index: 9999;
 }
 
 .mainPicture {
-    width: 100%;
-    height: 1000px;
-
-
+  width: 100%;
+  height: 1000px;
 }
 
 .pictureMain {
@@ -234,22 +236,22 @@ li:hover .mega-box {
 }
 
 .latestPreview {
-    width: 100%;
-    height: 80px;
-    color: white;
-    font-size: 25px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    background-color: rgb(16, 16, 16);
+  width: 100%;
+  height: 80px;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: rgb(16, 16, 16);
 
 }
 
 .centerpictures {
-    width: 100%;
-    height: 330px;
-    background-color: rgb(16, 16, 16);
+  width: 100%;
+  height: 330px;
+  background-color: rgb(16, 16, 16);
 
 }
 
@@ -286,114 +288,122 @@ li:hover .mega-box {
  */
 
 .bigcenter {
-    width: 850px;
-    height: 800px;
-    background-color: rgb(13, 13, 13);
-    padding: 25px;
+  width: 850px;
+  height: 800px;
+  background-color: rgb(13, 13, 13);
+  padding: 25px;
 }
 
 .imagebox11 {
-    width: 850px;
-    height: 500px;
-    background: url(../assets/newsphoto/news-1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 850px;
+  height: 500px;
+  background: url(../assets/newsphoto/news-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 
 }
 
 
 .font44 {
-    position: absolute;
-    left: 25px;
-    bottom: 155px;
-    transform: skew(-15deg);
-    display: inline;
-    background: rgba(255, 0, 0, 0.4);
-    padding: 9px 10px;
-    color: white;
-    font-weight: 800;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+  position: absolute;
+  left: 25px;
+  bottom: 120px;
+  transform: skew(-15deg);
+  display: inline;
+  background: rgba(255, 0, 0, 0.4);
+  padding: 9px 10px;
+  color: white;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
 
 }
 
 .font18 {
 
-    text-transform: uppercase;
-    text-align: left;
-    color: white;
-    margin-top: 20px;
-    font-size: 12px;
-    letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  color: white;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .font19 {
-    position: absolute;
-    color: white;
-    text-align: justify;
-    margin: 20px 10px 10px 0;
-    font-size: 20.5px;
-    bottom: 40px;
-    left: 20px;
+  position: absolute;
+  color: white;
+  text-align: justify;
+  margin: 20px 10px 10px 0;
+  font-size: 20.5px;
+  bottom: 40px;
+  left: 20px;
 
 }
 
 .mainvideosguideposition {
 
-    display: inline-block;
-    bottom: 10px;
-    left: 20px;
+  display: inline-block;
+  bottom: 10px;
+  left: 20px;
 }
 
 
 .font45 {
-    position: absolute;
-    left: 25px;
-    bottom: 100px;
-    transform: skew(-15deg);
-    display: inline;
-    background: rgba(255, 0, 0, 0.4);
-    padding: 9px 10px;
-    color: white;
-    font-weight: 800;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+  position: absolute;
+  left: 25px;
+  bottom: 100px;
+  transform: skew(-15deg);
+  display: inline;
+  background: rgba(255, 0, 0, 0.4);
+  padding: 9px 10px;
+  color: white;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
 
 }
 
+.mainAreaSliderGames {
+  margin-top: 10px;
+  width: 200px;
+  height: 166px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
 
 .imagebox12 {
 
-    margin-top: 10px;
-    width: 200px;
-    height: 166px;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/newsphoto/news-2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  margin-top: 10px;
+  width: 200px;
+  height: 166px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/center/c9.PNG);
+  background-repeat: no-repeat;
+  background-size: cover;
 
 
 }
 
 .imagebox13 {
 
-    margin-top: 10px;
-    width: 200px;
-    height: 166px;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/newsphoto/news-3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  margin-top: 10px;
+  width: 200px;
+  height: 166px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/center/c7.PNG);
+  background-repeat: no-repeat;
+  background-size: cover;
 
 
 }
 
 .imagebox14 {
 
-    margin-top: 10px;
-    width: 200px;
-    height: 166px;
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/newsphoto/news-4.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  margin-top: 10px;
+  width: 200px;
+  height: 166px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/center/c8.PNG);
+  background-repeat: no-repeat;
+  background-size: cover;
 
 
 }
@@ -433,9 +443,9 @@ li:hover .mega-box {
 
 .bottomArea {
 
-    width: 100%;
-    height: 530px;
-    background-color: black;
+  width: 100%;
+  height: 530px;
+  background-color: black;
 
 
 }

@@ -28,8 +28,8 @@
             height: 100%;
             background: url('assets/hero-1.jpg') no-repeat center center fixed;
             background-size: cover;
-            opacity: 0.5; /* Adjust the opacity as needed */
-            filter: blur(50px); /* Adjust the blur as needed */
+            opacity: 0.5; 
+            filter: blur(50px); 
             z-index: -1;
         }
 

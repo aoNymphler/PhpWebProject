@@ -29,12 +29,6 @@ $('.center-slider').owlCarousel({
 
 })
 
-
-
-
-
-
-
 $('.bigcenter-slider').owlCarousel({
     loop:true,
     margin:5,
@@ -59,8 +53,6 @@ $('.bigcenter-slider').owlCarousel({
     }
 
 })
-
-
 
 $('.bigcenter2-slider').owlCarousel({
     loop:true,

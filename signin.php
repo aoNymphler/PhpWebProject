@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user'] = $username;
             $_SESSION['firstname'] = $firstname;
             $_SESSION['lastname'] = $lastname;
-            $_SESSION['role'] = $role; // Rolü oturum değişkenine kaydedin
+            $_SESSION['role'] = $role; 
             header('Location: index.php');
             exit();
         } else {

@@ -12,6 +12,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,11 +35,12 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300&display=swap"
         rel="stylesheet">
 </head>
+
 <body>
     <div class="topBar">
         <div class="topBarLeftArea">
             <?php if ($_SESSION['role'] === 'admin'): ?>
-            <a href="admin_panel.php" class="fontTopBar">Admin Paneli</a> <!-- Admin Paneli bağlantısı -->
+            <a href="admin_panel.php" class="fontTopBar">Admin Paneli</a> 
             <span>/</span>
             <?php endif; ?>
             <i class="fa-regular fa-clock"></i>
@@ -68,31 +70,200 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
     <div class="menu">
         <ul>
             <div>
-                <li><a href="#" style="width: 95px; background-color: rgb(194,8,15);">
-                        <p style="transform: skew(15deg);">HOME</p>
-                    </a></li>
-                <li><a href="#">
-                        <p>STORE <i class="fa fa-angle-down fa-xs"></i></p>
-                    </a></li>
                 <li>
-                    <a href="#" style="width: 110px;">
+                    <a href="#">
+                        <p>STORE <i class="fa fa-angle-down fa-xs"></i></p>
+                    </a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                               <br>
+                                <ul class="mega-links">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Fear</a></li>
+                                    <li><a href="#">Sport</a></li>
+                                    <li><a href="#">Race</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header style="font-size: 22px; font-weight: 800;">CATAGORIES</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Role Playing</a></li>
+                                    <li><a href="#">Sandbox</a></li>
+                                    <li><a href="#">Survival</a></li>
+                                    <li><a href="#">FİFA Keys</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <br>
+                                <ul class="mega-links">
+                                    <li><a href="#">Free Game</a></li>
+                                    <li><a href="#">Simulation</a></li>
+                                    <li><a href="#">Real Time</a></li>
+                                    <li><a href="#">Anime</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" style="width: 110px">
                         <p>LIBRARY <i class="fa fa-angle-down fa-xs"></i></p>
                     </a>
                 </li>
-                <li><a href="#">
+                <li>
+                    <a href="#" style="width: 95px; background-color: rgb(194, 8, 15)">
+                        <p style="transform: skew(15deg)">HOME</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
                         <p>TRENDS <i class="fa fa-angle-down fa-xs"></i></p>
-                    </a></li>
-                <li><a href="#">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
                         <p>SUPPORT <i class="fa fa-angle-down fa-xs"></i></p>
-                    </a></li>
+                    </a>
+                </li>
             </div>
         </ul>
     </div>
     <div class="mainPicture">
         <div class="pictureMain">
-            <div class="maindiv1">
-                <p class="font3">PLAYSTATION AND PC GAMES</p>
-                <h3 class="font4">Welcome to Your Gaming Haven! Get ready for endless adventures!</h3>
+            <div class="bigcenter">
+                <div class="bigcenterleftdiv">
+                    <div style="margin:0 10px 30px 10px">
+                        <div class="bigcenter-slider owl-carousel owl-theme">
+                            <div class="bigcenter-slider__item">
+                                <div class="imagebox11">
+                                    <p class="font44">REVIEW</p>
+                                    <h3 class="font19">World of Tanks: A Comprehensive Overview<br>
+                                        Are you ready to dominate the battlefield? Join the Battle Today!</h3>
+                                </div>
+                            </div>
+                            <div class="bigcenter-slider__item">
+                                <div class="imagebox11">
+                                    <p class="font44">REVIEW</p>
+                                    <h3 class="font19">World of Tanks: A Comprehensive Overview<br>
+                                        Are you ready to dominate the battlefield? Join the Battle Today!</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin:10px 10px 30px 10px;">
+                        <div class="bigcenter2-slider owl-carousel owl-theme">
+                            <div class="center-slider__item">
+                                <div class=" imagesdivpositionmainbox3">
+                                    <div>
+                                        <img src="./assets/center/c11.PNG" class="mainAreaSliderGames">
+                                        <p class="font45">REVIEW</p>
+                                    </div>
+                                    <h4 class="font18">Downwell and space hulk: tactics are coming
+                                        to...</h3>
+                                        <div style="display: inline;">
+                                            <i class="fa-regular fa-clock fa-sm"
+                                                style="color: #5c5c5c; display: inline-block;"></i>
+                                            <span class="font9Price">12.99$</span>
+                                            <span class="font9">/</span>
+                                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                            <span class="font9">126</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="center-slider__item">
+                                <div class=" imagesdivpositionmainbox3">
+                                    <div>
+                                        <img src="./assets/center/c5.PNG" class="mainAreaSliderGames">
+                                        <p class="font45">BUY</p>
+                                    </div>
+                                    <h4 class="font18">Downwell and space hulk: tactics are coming
+                                        to...</h3>
+                                        <div style="display: inline;">
+                                            <i class="fa-regular fa-clock fa-sm"
+                                                style="color: #5c5c5c; display: inline-block;"></i>
+                                            <span class="font9Price">15.99$</span>
+                                            <span class="font9">/</span>
+                                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                            <span class="font9">564</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="center-slider__item">
+                                <div class=" imagesdivpositionmainbox3">
+                                    <div>
+                                        <img src="././assets/center/c6.PNG" class="mainAreaSliderGames">
+                                        <p class="font45">BUY</p>
+                                    </div>
+                                    <h4 class="font18">Downwell and space hulk: tactics are coming
+                                        to...</h3>
+                                        <div style="display: inline;">
+                                            <i class="fa-regular fa-clock fa-sm"
+                                                style="color: #5c5c5c; display: inline-block;"></i>
+                                            <span class="font9Price">20.99$</span>
+                                            <span class="font9">/</span>
+                                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                            <span class="font9">245</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="center-slider__item">
+                                <div class=" imagesdivpositionmainbox3">
+                                    <div>
+                                        <img src="././assets/center/c7.PNG" class="mainAreaSliderGames">
+                                        <p class="font45">BUY</p>
+                                    </div>
+                                    <h4 class="font18">Downwell and space hulk: tactics are coming
+                                        to...</h3>
+                                        <div style="display: inline;">
+                                            <i class="fa-regular fa-clock fa-sm"
+                                                style="color: #5c5c5c; display: inline-block;"></i>
+                                            <span class="font9Price">30.99$</span>
+                                            <span class="font9">/</span>
+                                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                            <span class="font9">531</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="center-slider__item">
+                                <div class=" imagesdivpositionmainbox3">
+                                    <div>
+                                        <img src="././assets/center/c8.PNG" class="mainAreaSliderGames">
+                                        <p class="font45">BUY</p>
+                                    </div>
+                                    <h4 class="font18">Downwell and space hulk: tactics are coming
+                                        to...</h3>
+                                        <div style="display: inline;">
+                                            <i class="fa-regular fa-clock fa-sm"
+                                                style="color: #5c5c5c; display: inline-block;"></i>
+                                            <span class="font9Price">20.99$</span>
+                                            <span class="font9">/</span>
+                                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                            <span class="font9">543</span>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="center-slider__item">
+                                <div class=" imagesdivpositionmainbox3">
+                                    <div>
+                                        <img src="././assets/center/c9.PNG" class="mainAreaSliderGames">
+                                        <p class="font45">BUY</p>
+                                    </div>
+                                    <h4 class="font18">Downwell and space hulk: tactics are coming
+                                        to...</h3>
+                                        <div style="display: inline;">
+                                            <i class="fa-regular fa-clock fa-sm"
+                                                style="color: #5c5c5c; display: inline-block;"></i>
+                                            <span class="font9Price">10.99$</span>
+                                            <span class="font9">/</span>
+                                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                                            <span class="font9">324</span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="maindiv2">
                 <div style="text-align: center;">
@@ -100,7 +271,6 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                     <h3 class="font17"><i>TRENDING POSTS</i></h3>
                 </div>
                 <div style="padding-top: 30px;" id="centerSlider">
-                
                 </div>
             </div>
         </div>
@@ -114,161 +284,161 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
     <div class="centerpictures">
         <div class="cp">
             <div class="center-slider owl-carousel owl-theme">
-            <div class="center-slider__item">
-                    <div class=" imagesdivpositionmainbox99" >
+                <div class="center-slider__item">
+                    <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c11.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">19.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">534</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">19.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">534</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c22.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">29.99$</span> 
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">250</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">29.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">250</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c33.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">5.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">126</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">5.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">126</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c4.PNG" class="imagebox2">
-                      
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">12.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">823</span>
-                            </div>
+
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">12.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">823</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c5.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">20.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">132</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">20.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">132</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c6.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">5.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">123</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">5.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">123</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c7.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">30.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">614</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">30.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">614</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c8.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">18.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">392</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">18.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">392</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c9.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">5.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">435</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">5.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">435</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c5.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">20.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">343</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">20.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">343</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c22.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">20.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">544</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">20.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">544</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c33.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">10.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">132</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">10.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">132</span>
+                        </div>
                     </div>
                 </div>
                 <div class="center-slider__item">
                     <div class=" imagesdivpositionmainbox99">
                         <img src="././assets/center/c4.PNG" class="imagebox2">
-                            <div style="display: inline;">
-                                <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
-                                <span class="font9Price">20.99$</span>
-                                <span class="font9">/</span>
-                                <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
-                                <span class="font9">12</span>
-                            </div>
+                        <div style="display: inline;">
+                            <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
+                            <span class="font9Price">20.99$</span>
+                            <span class="font9">/</span>
+                            <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
+                            <span class="font9">12</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -313,8 +483,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                             </div>
                             <div class=" imagesdivpositionmainbox2">
                                 <div class="areaBox">
-                                    <img src="././assets/finalpart2/c8.PNG"
-                                        style="display:inline-block; height: 90px;">
+                                    <img src="././assets/finalpart2/c8.PNG" style="display:inline-block; height: 90px;">
                                     <p class="font10">A MONSTER PROM POSTER<br> GOT HIJACKED FOR A PAPA<br>
                                         ROACH
                                         CONCERT...
@@ -328,15 +497,12 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                     <div class="boxB" style="margin-top: 35px;"></div>
                     <i class="font12">TAGS CLOUD </i>
                     <div class="boxfdiv33">
-                        <a href="#" class="boxfdiv3"><span class="font13">Gaming</span></a>
                         <a href="#" class="boxfdiv3"><span class="font13">Platform</span></a>
-                        <a href="#" class="boxfdiv3"><span class="font13">Playstation</span></a><br>
                         <a href="#" class="boxfdiv3"><span class="font13">Hardware</span></a>
-                        <a href="#" class="boxfdiv3"><span class="font13">Reviews</span></a>
                         <a href="#" class="boxfdiv3"><span class="font13">Simulation</span></a><br>
                         <a href="#" class="boxfdiv3"><span class="font13">Strategy</span></a>
                         <a href="#" class="boxfdiv3"><span class="font13">Scientific</span></a>
-                        <a href="#" class="boxfdiv3"><span class="font13">References</span></a><br>
+                        <a href="#" class="boxfdiv3"><span class="font13">Action</span></a><br>
                         <a href="#" class="boxfdiv3"><span class="font13">Role-Playing</span></a>
                         <a href="#" class="boxfdiv3"><span class="font13">Adventurea</span></a>
                     </div>
@@ -363,4 +529,5 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
     <script src="./js/index.js"></script>
     <script src="./app.js"></script>
 </body>
+
 </html>

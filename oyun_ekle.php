@@ -2,7 +2,6 @@
 session_start();
 require 'db_connect.php';
 
-// Sadece admin kullanıcılarının erişimine izin verin
 if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'admin') {
     header('Location: index.php');
     exit();
@@ -28,7 +27,7 @@ $result = $conn->query($sql);
 <body>
 <div class="sidebar">
         <div class="logo">
-            <img src="./assets/logo.png" alt="Logo"> <!-- Logonuzun dosya yolunu buraya ekleyin -->
+            <img src="./assets/logo.png" alt="Logo" style="width:215px; margin-top:20px">
         </div>
         <div class="profile">
             <h2><?php echo htmlspecialchars($firstname . ' ' . $lastname); ?></h2>
@@ -36,9 +35,9 @@ $result = $conn->query($sql);
         </div>
         <nav>
             <ul>
-                <li><a href="index.php"><i class="fas fa-home"></i> Ana Sayfa</a></li>
-                <li><a href="admin_panel.php"><i class="fas fa-tachometer-alt"></i> Admin Paneli</a></li>
-                <li><a href="oyun_ekle.php"><i class="fas fa-gamepad"></i> Oyun Ekle</a></li>
+                <li><a href="index.php"><i class="fas fa-home" style="margin-right:10px"></i> Ana Sayfa</a></li>
+                <li><a href="admin_panel.php"><i class="fas fa-tachometer-alt" style="margin-right:10px"></i> Admin Panel</a></li>
+                <li><a href="oyun_ekle.php"><i class="fas fa-gamepad" style="margin-right:10px"></i> Oyun Ekle</a></li>
             </ul>
         </nav>
     </div>

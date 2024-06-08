@@ -28,8 +28,8 @@
             height: 100%;
             background: url('assets/hero-1.jpg') no-repeat center center fixed;
             background-size: cover;
-            opacity: 0.5; /* Adjust the opacity as needed */
-            filter: blur(50px); /* Adjust the blur as needed */
+            opacity: 0.9; /* Adjust the opacity as needed */
+            filter: blur(10px); /* Adjust the blur as needed */
             z-index: -1;
         }
 
@@ -38,7 +38,6 @@
             width: 800px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
             margin-top: 20px;
         }
@@ -89,7 +88,7 @@
         
         .support-form {
             flex: 2;
-            background: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -122,7 +121,7 @@
         }
 
         .support-form button {
-            background-color: #333;
+            background-color: black;
             color: white;
             padding: 5px 10px;
             border: none;
@@ -137,14 +136,12 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Support</h1>
-    </header>
+   
     <div class="container">
         <div class="content">
           
             <div class="support-form">
-                <h2>How can we help you?</h2>
+                <h2>HOW CAN WE HELP YOU?</h2>
                 <p>If you have any questions or need assistance, please fill out the form below and our support team will get back to you as soon as possible.</p>
                 <form action="#" method="post">
                     <label for="name">Name:</label>

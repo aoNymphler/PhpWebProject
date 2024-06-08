@@ -17,7 +17,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
 <html lang="en">
 
 <head>
-    <title>Halic University</title>
+    <title>Halic University</title >
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" contents="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

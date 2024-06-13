@@ -57,12 +57,10 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
             <p class="fontTopBar"><a href="signin.php">Sign Out</a></p>
         </div>
         <div class="images">
-            <i class="fa-brands fa-facebook-f"></i>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-regular fa-envelope"></i></a>
-        </div>
+    <i class="fa-solid fa-basket-shopping fa-xl"></i>
+    <a class="shop-txt" href="shop.php">SHOP</a> 
+</div>
+
     </div>
     <div class="logo">
         <img src="./assets/logo.png" class="logosize" alt="Örnek Resim" />

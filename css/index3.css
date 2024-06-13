@@ -6,7 +6,6 @@ body {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-
 }
 
 * {
@@ -71,7 +70,7 @@ li:hover .mega-box {
 
 .content .row ul li a {
   text-decoration: none;
- margin-inline: 10px;
+  margin-inline: 10px;
 }
 
 .content .row ul li a:hover {
@@ -99,11 +98,22 @@ li:hover .mega-box {
 }
 
 .images a {
-  margin-left: 10px;
+  margin-left: 30px;
+}
+
+.images {
+  display: flex;
+  align-items: center;
 }
 
 .images i {
-  color: #ffffff;
+  font-size: 24px; /* Sepet logosu font boyutunu ayarlayın */
+  color: #fff; /* Sepet logosu rengini beyaz yapın */
+  margin-right: 10px; /* Sepet logosu ile SHOP yazısı arasında boşluk bırakın */
+}
+
+.shop-text {
+  color: #fff; /* SHOP yazısı rengini beyaz yapın */
 }
 
 .logo {
@@ -245,14 +255,12 @@ li:hover .mega-box {
   justify-content: center;
   align-items: flex-end;
   background-color: rgb(16, 16, 16);
-
 }
 
 .centerpictures {
   width: 100%;
   height: 330px;
   background-color: rgb(16, 16, 16);
-
 }
 
 .cp {
@@ -300,9 +308,7 @@ li:hover .mega-box {
   background: url(../assets/newsphoto/news-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-
 }
-
 
 .font44 {
   position: absolute;
@@ -314,13 +320,11 @@ li:hover .mega-box {
   padding: 9px 10px;
   color: white;
   font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
-
 }
 
 .font18 {
-
   text-transform: uppercase;
   text-align: left;
   color: white;
@@ -337,16 +341,13 @@ li:hover .mega-box {
   font-size: 20.5px;
   bottom: 40px;
   left: 20px;
-
 }
 
 .mainvideosguideposition {
-
   display: inline-block;
   bottom: 10px;
   left: 20px;
 }
-
 
 .font45 {
   position: absolute;
@@ -358,9 +359,8 @@ li:hover .mega-box {
   padding: 9px 10px;
   color: white;
   font-weight: 800;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
-
 }
 
 .mainAreaSliderGames {
@@ -369,85 +369,42 @@ li:hover .mega-box {
   height: 166px;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .imagebox12 {
-
   margin-top: 10px;
   width: 200px;
   height: 166px;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/center/c9.PNG);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../assets/center/c9.PNG);
   background-repeat: no-repeat;
   background-size: cover;
-
-
 }
 
 .imagebox13 {
-
   margin-top: 10px;
   width: 200px;
   height: 166px;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/center/c7.PNG);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../assets/center/c7.PNG);
   background-repeat: no-repeat;
   background-size: cover;
-
-
 }
 
 .imagebox14 {
-
   margin-top: 10px;
   width: 200px;
   height: 166px;
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/center/c8.PNG);
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../assets/center/c8.PNG);
   background-repeat: no-repeat;
   background-size: cover;
-
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .bottomArea {
-
   width: 100%;
   height: 530px;
   background-color: black;
-
-
 }
 
 .bottomAreaMainDiv {

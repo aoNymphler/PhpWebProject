@@ -77,30 +77,30 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                     <div class="mega-box">
                         <div class="content">
                             <div class="row">
-                               <br>
+                                <br>
                                 <ul class="mega-links">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Fear</a></li>
-                                    <li><a href="#">Sport</a></li>
-                                    <li><a href="#">Race</a></li>
+                                    <li><a href="games/allGames.html#action">Action</a></li>
+                                    <li><a href="games/allGames.html#fear">Fear</a></li>
+                                    <li><a href="games/allGames.html#sport">Sport</a></li>
+                                    <li><a href="games/allGames.html#race">Race</a></li>
                                 </ul>
                             </div>
                             <div class="row">
-                                <header style="font-size: 22px; font-weight: 800;">CATAGORIES</header>
+                                <header style="font-size: 22px; font-weight: 800;">CATEGORIES</header>
                                 <ul class="mega-links">
-                                    <li><a href="#">Role Playing</a></li>
-                                    <li><a href="#">Sandbox</a></li>
-                                    <li><a href="#">Survival</a></li>
-                                    <li><a href="#">FİFA Keys</a></li>
+                                    <li><a href="games/allGames.html#rolePlaying">Role Playing</a></li>
+                                    <li><a href="games/allGames.html#sandbox">Sandbox</a></li>
+                                    <li><a href="games/allGames.html#survival">Survival</a></li>
+                                    <li><a href="games/allGames.html#fifa_keys">FIFA Keys</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <br>
                                 <ul class="mega-links">
-                                    <li><a href="#">Free Game</a></li>
-                                    <li><a href="#">Simulation</a></li>
-                                    <li><a href="#">Real Time</a></li>
-                                    <li><a href="#">Anime</a></li>
+                                    <li><a href="games/allGames.html#freeGame">Free Game</a></li>
+                                    <li><a href="games/allGames.html#simulation">Simulation</a></li>
+                                    <li><a href="games/allGames.html#real_time">Real Time</a></li>
+                                    <li><a href="games/allGames.html#anime">Anime</a></li>
                                 </ul>
                             </div>
                         </div>

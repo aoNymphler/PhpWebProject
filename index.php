@@ -82,25 +82,22 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                                     <li><a href="games/allGames.html#action">Action</a></li>
                                     <li><a href="games/allGames.html#fear">Fear</a></li>
                                     <li><a href="games/allGames.html#sport">Sport</a></li>
-                                    <li><a href="games/allGames.html#race">Race</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <header style="font-size: 22px; font-weight: 800;">CATEGORIES</header>
                                 <ul class="mega-links">
-                                    <li><a href="games/allGames.html#rolePlaying">Role Playing</a></li>
-                                    <li><a href="games/allGames.html#sandbox">Sandbox</a></li>
+                                    <li><a href="games/allGames.html#rolePlaying">RPG</a></li>
+                                    <li><a href="games/allGames.html#strategy">Strategy</a></li>
                                     <li><a href="games/allGames.html#survival">Survival</a></li>
-                                    <li><a href="games/allGames.html#fifa_keys">FIFA Keys</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <br>
                                 <ul class="mega-links">
-                                    <li><a href="games/allGames.html#freeGame">Free Game</a></li>
-                                    <li><a href="games/allGames.html#simulation">Simulation</a></li>
-                                    <li><a href="games/allGames.html#real_time">Real Time</a></li>
-                                    <li><a href="games/allGames.html#anime">Anime</a></li>
+                                    <li><a href="games/allGames.html#freeGames">Free Game</a></li>
+                                    <li><a href="games/allGames.html#rogueLike">Rogue Like</a></li>
+                                    <li><a href="games/allGames.html#race">Race</a></li>
                                 </ul>
                             </div>
                         </div>

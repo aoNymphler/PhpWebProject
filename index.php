@@ -57,9 +57,9 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
             <p class="fontTopBar"><a href="signin.php">Sign Out</a></p>
         </div>
         <div class="images">
-    <i class="fa-solid fa-basket-shopping fa-xl"></i>
-    <a class="shop-txt" href="shop.php">SHOP</a> 
-</div>
+            <i class="fa-solid fa-basket-shopping fa-xl"></i>
+            <a class="shop-txt fontTopBar" href="shop.php">SHOP</a> 
+        </div>
 
     </div>
     <div class="logo">

@@ -137,10 +137,28 @@ $conn->close();
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
             margin: 0 10px;
         }
+
+        .back-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(50, 0, 0, 1);
+            color: white;
+            padding: 10px 50px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            z-index: 2;
+            font-size: 25px;
+        }
+
+        .back-button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
     </style>
 </head>
 <body>
-
+<a href="index.php" class="back-button">Back</a>
 <div class="container">
     <h1>YOUR SHOP</h1>
     <?php if (count($cart_items) > 0): ?>

@@ -26,38 +26,20 @@ while ($row = $result->fetch_assoc()) {
 }
 $stmt->close();
 
-if (count($purchased_games) > 0) {
-    $placeholders = implode(',', array_fill(0, count($purchased_games), '?'));
-    $types = str_repeat('i', count($purchased_games));
-
-    // Tüm oyunları ve kategorileri veritabanından çek
-    $games_sql = "
-        SELECT games.id, games.title, games.price, games.image_url, categories.name AS category
-        FROM games
-        JOIN categories ON games.category_id = categories.id
-        WHERE games.id NOT IN ($placeholders)
-    ";
-    $stmt = $conn->prepare($games_sql);
-    $stmt->bind_param($types, ...$purchased_games);
-} else {
-    // Eğer kullanıcının satın aldığı oyun yoksa tüm oyunları seç
-    $games_sql = "
-        SELECT games.id, games.title, games.price, games.image_url, categories.name AS category
-        FROM games
-        JOIN categories ON games.category_id = categories.id
-    ";
-    $stmt = $conn->prepare($games_sql);
-}
-
-$stmt->execute();
-$games_result = $stmt->get_result();
+// Tüm oyunları ve kategorileri veritabanından çek
+$games_sql = "
+    SELECT games.id, games.title, games.price, games.image_url, categories.name AS category
+    FROM games
+    JOIN categories ON games.category_id = categories.id
+";
+$games_result = $conn->query($games_sql);
 
 $games = [];
 while ($row = $games_result->fetch_assoc()) {
     $games[$row['category']][] = $row;
 }
 
-$stmt->close();
+$games_result->close();
 $conn->close();
 ?>
 
@@ -127,7 +109,11 @@ $conn->close();
                                     <span class="font9">/</span>
                                     <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
                                     <span class="font9">250</span>
-                                    <button onclick="addToCart(<?php echo $game['id']; ?>)" class="add-to-cart">Add to Cart</button>
+                                    <?php if (in_array($game['id'], $purchased_games)): ?>
+                                        <button class="add-to-cart" disabled>Owned</button>
+                                    <?php else: ?>
+                                        <button onclick="addToCart(<?php echo $game['id']; ?>)" class="add-to-cart">Add to Cart</button>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         <?php endforeach; ?>

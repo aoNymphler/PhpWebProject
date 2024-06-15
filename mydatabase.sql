@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 15 Haz 2024, 13:24:23
+-- Üretim Zamanı: 15 Haz 2024, 18:56:55
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -56,7 +56,7 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 (4, 'Survival'),
 (5, 'Sport'),
 (6, 'Race'),
-(7, 'Strategy'),
+(7, 'Action'),
 (8, 'Rogue Like'),
 (9, 'Free Games');
 
@@ -84,7 +84,10 @@ INSERT INTO `games` (`id`, `title`, `description`, `price`, `image_url`, `catego
 (3, 'Dada', 'aAda', 333.00, 'uploads/c7.PNG', 1),
 (4, 'Haa', 'haa', 1500.00, 'uploads/c22.PNG', 2),
 (5, 'Peki', 'axaas', 1000.00, 'uploads/lp-4.jpg', 9),
-(6, 'merhabaa', 'merhabaa', 1000.00, 'uploads/c9.PNG', 5);
+(6, 'merhabaa', 'merhabaa', 1000.00, 'uploads/c9.PNG', 5),
+(7, 'aaa2', 'aaa2', 222.00, 'uploads/c5.PNG', 1),
+(8, 'aaa7', 'aaa7', 1111.00, 'uploads/lp-2.jpg', 7),
+(9, 'aaa9', 'aaa9', 111.00, 'uploads/c11.PNG', 9);
 
 -- --------------------------------------------------------
 
@@ -98,6 +101,18 @@ CREATE TABLE `purchases` (
   `game_id` int(11) NOT NULL,
   `purchase_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Tablo döküm verisi `purchases`
+--
+
+INSERT INTO `purchases` (`id`, `user_id`, `game_id`, `purchase_date`) VALUES
+(27, 1, 3, '2024-06-15 16:56:17'),
+(28, 1, 7, '2024-06-15 16:56:17'),
+(29, 1, 1, '2024-06-15 16:56:17'),
+(30, 1, 4, '2024-06-15 16:56:17'),
+(31, 1, 9, '2024-06-15 16:56:17'),
+(32, 1, 5, '2024-06-15 16:56:17');
 
 -- --------------------------------------------------------
 
@@ -191,7 +206,7 @@ ALTER TABLE `user_games`
 -- Tablo için AUTO_INCREMENT değeri `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `categories`
@@ -203,13 +218,13 @@ ALTER TABLE `categories`
 -- Tablo için AUTO_INCREMENT değeri `games`
 --
 ALTER TABLE `games`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`

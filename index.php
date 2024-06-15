@@ -77,32 +77,32 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                             <div class="row">
                                 <br>
                                 <ul class="mega-links">
-                                    <li><a href="games/allGames.html#action">Action</a></li>
-                                    <li><a href="games/allGames.html#fear">Fear</a></li>
-                                    <li><a href="games/allGames.html#sport">Sport</a></li>
+                                    <li><a href="allGames.php#action">Action</a></li>
+                                    <li><a href="allGames.php#fear">Fear</a></li>
+                                    <li><a href="allGames.php#sport">Sport</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <header style="font-size: 22px; font-weight: 800;">CATEGORIES</header>
                                 <ul class="mega-links">
-                                    <li><a href="games/allGames.html#rolePlaying">RPG</a></li>
-                                    <li><a href="games/allGames.html#strategy">Strategy</a></li>
-                                    <li><a href="games/allGames.html#survival">Survival</a></li>
+                                    <li><a href="allGames.php#rolePlaying">RPG</a></li>
+                                    <li><a href="allGames.php#strategy">Strategy</a></li>
+                                    <li><a href="allGames.php#survival">Survival</a></li>
                                 </ul>
                             </div>
                             <div class="row">
                                 <br>
                                 <ul class="mega-links">
-                                    <li><a href="games/allGames.html#freeGames">Free Game</a></li>
-                                    <li><a href="games/allGames.html#rogueLike">Rogue Like</a></li>
-                                    <li><a href="games/allGames.html#race">Race</a></li>
+                                    <li><a href="allGames.php#freeGames">Free Game</a></li>
+                                    <li><a href="allGames.php#rogueLike">Rogue Like</a></li>
+                                    <li><a href="allGames.php#race">Race</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
-                    <a href="#" style="width: 110px">
+                    <a href="library.php" style="width: 110px">
                         <p>LIBRARY <i class="fa fa-angle-down fa-xs"></i></p>
                     </a>
                 </li>

@@ -17,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->fetch();
 
         if (password_verify($password, $stored_password)) {
-            $_SESSION['user'] = $username;
+            $_SESSION['user_id'] = $id; // Kullanıcı kimliğini oturuma kaydet
+            $_SESSION['username'] = $username;
             $_SESSION['firstname'] = $firstname;
             $_SESSION['lastname'] = $lastname;
             $_SESSION['role'] = $role; 

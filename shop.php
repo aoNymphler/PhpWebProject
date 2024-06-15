@@ -1,5 +1,36 @@
+<?php
+session_start();
+require 'db_connect.php';
+
+if (!isset($_SESSION['user'])) {
+    header('Location: signin.php');
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+$sql = "
+    SELECT games.id, games.title, games.price, games.image_url, cart.added_date
+    FROM cart
+    JOIN games ON cart.game_id = games.id
+    WHERE cart.user_id = ?
+";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$cart_items = [];
+while ($row = $result->fetch_assoc()) {
+    $cart_items[] = $row;
+}
+
+$stmt->close();
+$conn->close();
+?>
+
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,8 +56,8 @@
             height: 100%;
             background: url('assets/hero-1.jpg') no-repeat center center fixed;
             background-size: cover;
-            opacity: 0.9; /* Adjust the opacity as needed */
-            filter: blur(10px); /* Adjust the blur as needed */
+            opacity: 0.9;
+            filter: blur(10px);
             z-index: -1;
         }
 
@@ -53,14 +84,14 @@
         }
 
         .product img {
-            width: 200px; /* Resim genişliği */
+            width: 200px;
             height: auto;
             border-radius: 5px;
             margin-right: 20px;
         }
 
         .product-details {
-            flex: 1; /* Ürün adı ve fiyat kısmını esnek yapmak için */
+            flex: 1;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -112,65 +143,49 @@
 
 <div class="container">
     <h1>YOUR SHOP</h1>
-    <div class="product">
-        <img src=././assets/center/c9.PNG alt="Product 1">
-        <div class="product-details">
-            <div class="product-name">Lost Ark</div>
-            <div class="product-price">$19.99 <i class="fas fa-times delete-product" onclick="deleteProduct(this)"></i></div>
+    <?php if (count($cart_items) > 0): ?>
+        <?php foreach ($cart_items as $item): ?>
+            <div class="product">
+                <img src="<?php echo htmlspecialchars($item['image_url']); ?>" alt="<?php echo htmlspecialchars($item['title']); ?>">
+                <div class="product-details">
+                    <div class="product-name"><?php echo htmlspecialchars($item['title']); ?></div>
+                    <div class="product-price"><?php echo htmlspecialchars($item['price']); ?>$ <i class="fas fa-times delete-product" onclick="deleteProduct(<?php echo $item['id']; ?>)"></i></div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <div class="total-price" id="totalPrice">
+            <?php
+            $total = 0;
+            foreach ($cart_items as $item) {
+                $total += $item['price'];
+            }
+            echo "Toplam: $" . number_format($total, 2);
+            ?>
         </div>
-    </div>
-
-    <div class="product">
-        <img src="path/to/product2.jpg" alt="Product 2">
-        <div class="product-details">
-            <div class="product-name">Product 2</div>
-            <div class="product-price">$24.99 <i class="fas fa-times delete-product" onclick="deleteProduct(this)"></i></div>
-        </div>
-    </div>
-
-    <div class="product">
-        <img src="path/to/product3.jpg" alt="Product 3">
-        <div class="product-details">
-            <div class="product-name">Product 3</div>
-            <div class="product-price">$29.99 <i class="fas fa-times delete-product" onclick="deleteProduct(this)"></i></div>
-        </div>
-    </div>
-
-    <div class="total-price" id="totalPrice">
-        Toplam: $0.00 <!-- Buraya JavaScript ile toplam fiyatı dinamik olarak yazacağız -->
-    </div>
+    <?php else: ?>
+        <p>Cart is empty.</p>
+    <?php endif; ?>
 </div>
 
 <div class="purchase-options">
-    <a href="payment.html"><img src=././assets/icon/credikart.png alt="Credit Card"></a>
-    <a href="payment.html"><img src=././assets/icon/debit.jpeg alt="Debit Card"></a>
-    <a href="payment.html"><img src=././assets/icon/paypal.png alt="PayPal"></a>
-    <a href="payment.html"><img src=././assets/icon/applepay.jpg alt="Apple Pay"></a>
+    <a href="payment.php"><img src="assets/icon/credikart.png" alt="Credit Card"></a>
+    <a href="payment.php"><img src="assets/icon/debit.jpeg" alt="Debit Card"></a>
+    <a href="payment.php"><img src="assets/icon/paypal.png" alt="PayPal"></a>
+    <a href="payment.php"><img src="assets/icon/applepay.jpg" alt="Apple Pay"></a>
 </div>
 
 <script>
-    // Ürün fiyatlarını al
-    const productPrices = document.querySelectorAll('.product-price');
-    // Toplam fiyat değişkeni
-    let totalPrice = 0;
-
-    // Her bir ürün fiyatını toplam fiyata ekle
-    productPrices.forEach(price => {
-        const priceText = price.textContent.trim().replace('$', ''); // '$' işaretini kaldır ve boşlukları temizle
-        totalPrice += parseFloat(priceText); // Fiyatı float'a çevirerek toplam fiyata ekle
-    });
-
-    // Toplam fiyatı HTML'e yazdır
-    const totalPriceElement = document.getElementById('totalPrice');
-    totalPriceElement.textContent = `Toplam: $${totalPrice.toFixed(2)}`; // Toplam fiyatı düzgün bir şekilde biçimlendirerek yazdır
-
-    // Ürünü silen fonksiyon
-    function deleteProduct(element) {
-        const product = element.closest('.product');
-        const productPrice = product.querySelector('.product-price').textContent.trim().replace('$', ''); // Silinecek ürünün fiyatını al
-        totalPrice -= parseFloat(productPrice); // Toplam fiyattan çıkar
-        totalPriceElement.textContent = `Toplam: $${totalPrice.toFixed(2)}`; // Toplam fiyatı güncelle
-        product.remove(); // Ürünü sil
+    function deleteProduct(gameId) {
+        // AJAX isteği göndererek oyunu sepetten çıkar
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "remove_from_cart.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                location.reload(); // Sayfayı yenile
+            }
+        };
+        xhr.send("game_id=" + gameId);
     }
 </script>
 

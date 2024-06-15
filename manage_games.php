@@ -7,7 +7,12 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'admin') {
     exit();
 }
 
-$games_sql = "SELECT id, title, description, image_url FROM games";
+// Oyun ve kategorilerini çek
+$games_sql = "
+    SELECT games.id, games.title, games.description, games.image_url, categories.name AS category
+    FROM games
+    LEFT JOIN categories ON games.category_id = categories.id
+";
 $games_result = $conn->query($games_sql);
 ?>
 
@@ -50,6 +55,7 @@ $games_result = $conn->query($games_sql);
                         <th>Oyun Adı</th>
                         <th>Açıklama</th>
                         <th>Görsel</th>
+                        <th>Kategori</th>
                         <th>İşlemler</th>
                     </tr>
                 </thead>
@@ -60,6 +66,7 @@ $games_result = $conn->query($games_sql);
                                 <td><?php echo htmlspecialchars($game['title']); ?></td>
                                 <td><?php echo htmlspecialchars($game['description']); ?></td>
                                 <td><img src="<?php echo htmlspecialchars($game['image_url']); ?>" alt="<?php echo htmlspecialchars($game['title']); ?>" width="50"></td>
+                                <td><?php echo htmlspecialchars($game['category']); ?></td>
                                 <td>
                                     <form method="POST" action="delete_game.php">
                                         <input type="hidden" name="game_id" value="<?php echo $game['id']; ?>">
@@ -70,7 +77,7 @@ $games_result = $conn->query($games_sql);
                         <?php endwhile; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="4">Hiç oyun bulunamadı.</td>
+                            <td colspan="5">Hiç oyun bulunamadı.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

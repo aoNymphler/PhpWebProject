@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 15 Haz 2024, 18:56:55
+-- Üretim Zamanı: 16 Haz 2024, 04:15:20
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -68,8 +68,9 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 
 CREATE TABLE `games` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `video` varchar(255) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `image_url` varchar(255) NOT NULL,
   `category_id` int(11) NOT NULL
@@ -79,15 +80,9 @@ CREATE TABLE `games` (
 -- Tablo döküm verisi `games`
 --
 
-INSERT INTO `games` (`id`, `title`, `description`, `price`, `image_url`, `category_id`) VALUES
-(1, 'a', 'A', 1000.00, 'uploads/c33.PNG', 1),
-(3, 'Dada', 'aAda', 333.00, 'uploads/c7.PNG', 1),
-(4, 'Haa', 'haa', 1500.00, 'uploads/c22.PNG', 2),
-(5, 'Peki', 'axaas', 1000.00, 'uploads/lp-4.jpg', 9),
-(6, 'merhabaa', 'merhabaa', 1000.00, 'uploads/c9.PNG', 5),
-(7, 'aaa2', 'aaa2', 222.00, 'uploads/c5.PNG', 1),
-(8, 'aaa7', 'aaa7', 1111.00, 'uploads/lp-2.jpg', 7),
-(9, 'aaa9', 'aaa9', 111.00, 'uploads/c11.PNG', 9);
+INSERT INTO `games` (`id`, `title`, `description`, `video`, `price`, `image_url`, `category_id`) VALUES
+(7, 'a3a3', 'a3a3', 'https://www.youtube.com/embed/c80dVYcL69E?si=MkUamFfI7EM1G5Ax', 1500.00, 'uploads/c4.PNG', 1),
+(8, 'a5a5', 'a5a5', 'https://www.youtube.com/embed/c80dVYcL69E?si=MkUamFfI7EM1G5Ax', 1200.00, 'uploads/c22.PNG', 6);
 
 -- --------------------------------------------------------
 
@@ -107,12 +102,8 @@ CREATE TABLE `purchases` (
 --
 
 INSERT INTO `purchases` (`id`, `user_id`, `game_id`, `purchase_date`) VALUES
-(27, 1, 3, '2024-06-15 16:56:17'),
-(28, 1, 7, '2024-06-15 16:56:17'),
-(29, 1, 1, '2024-06-15 16:56:17'),
-(30, 1, 4, '2024-06-15 16:56:17'),
-(31, 1, 9, '2024-06-15 16:56:17'),
-(32, 1, 5, '2024-06-15 16:56:17');
+(34, 1, 8, '2024-06-16 02:14:09'),
+(35, 1, 7, '2024-06-16 02:14:09');
 
 -- --------------------------------------------------------
 
@@ -135,7 +126,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `lastname`, `role`) VALUES
 (1, 'a', '$2y$10$fxOOeh9YwY06ylPoIoYVbup13IH6q6vkaSBnTbnVWWzs3Ay2.BRwu', 'a', 'a', 'admin'),
-(2, 'b', '$2y$10$cO.JOju8pE5XZ9ONmAL72.ViYOZxiYzgr2nosIQ8xUhRCiD06KFNK', 'b', 'b', 'user');
+(2, 'b', '$2y$10$cO.JOju8pE5XZ9ONmAL72.ViYOZxiYzgr2nosIQ8xUhRCiD06KFNK', 'b', 'b', 'user'),
+(3, 'c', '$2y$10$OooOmaKCAN0Gfaawnlt0J.Ve83TT4eFAt4YdB92T.A4ZtUgA6tT42', 'c', 'c', 'user');
 
 -- --------------------------------------------------------
 
@@ -206,7 +198,7 @@ ALTER TABLE `user_games`
 -- Tablo için AUTO_INCREMENT değeri `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `categories`
@@ -218,19 +210,19 @@ ALTER TABLE `categories`
 -- Tablo için AUTO_INCREMENT değeri `games`
 --
 ALTER TABLE `games`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `user_games`
@@ -253,7 +245,7 @@ ALTER TABLE `cart`
 -- Tablo kısıtlamaları `games`
 --
 ALTER TABLE `games`
-  ADD CONSTRAINT `games_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `games_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
 
 --
 -- Tablo kısıtlamaları `purchases`

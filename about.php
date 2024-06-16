@@ -30,21 +30,21 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 1px;
             background-color: rgba(0, 0, 0, 0.6);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
-            margin-top: 150px;
+            margin-top:50px;
             text-align: center;
         }
         h1 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         p {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -57,7 +57,13 @@
         <p>Haliç Üniversitesi öğrencileri olarak Internet & Web Programming dersi ödevini yapmak amacımız.</p>
         
         <h2>Our Mission</h2>
-        <p>Şirket Adı, [şirketinizin veya projenizin genel hedefleri ve vizyonu hakkında bilgi.]</p>
+        <p>-Kullanıcılarımıza en eğlenceli ve eğitici oyunları sunarak, hem keyifli vakit geçirmelerini hem de yeni beceriler kazanmalarını sağlamak.</p>
+        <p>-Oyun severleri bir araya getiren, bilgi paylaşımı ve etkileşim imkanı sunan bir topluluk oluşturmak.</p>
+        <p>-En yeni ve en kaliteli oyunları kullanıcılarımıza sunarak, onların oyun deneyimini sürekli olarak geliştirmek.</p>
+        <p>-Kullanıcılarımıza güvenli, adil ve keyifli bir oyun ortamı sağlamak.</p>
+        <p>-Oyun dünyasındaki en son yenilikleri takip ederek ve bunları kullanıcılarımıza sunarak, sürekli olarak gelişen ve büyüyen bir platform olmak.</p>
+        <p>-Her yaştan ve her seviyeden oyuncuya hitap eden, kolay erişilebilir ve kullanıcı dostu bir platform sunmak.</p>
+        <p>-Oyunlarla ilgili her türlü konuda kullanıcılara destek olmak ve rehberlik sunmak.</p>
         
       
     </div>

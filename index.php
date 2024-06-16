@@ -454,13 +454,13 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                         tempor
                         incididunt ut labore et dolore magna aliqua lacus vel facilisis.</p>
                     <div style="display: inline-block; margin-top: 55px; transform: skew(-15deg); ">
-                        <div class="bottomFont2"><a href="#"><i class="fa-brands fa-facebook-f"
+                        <div class="bottomFont2"><a href="https://www.facebook.com/halicedu1998/?locale=tr_TR"><i class="fa-brands fa-facebook-f"
                                     style="color: #ffffff; transform: skew(15deg); "></i></a></div>
-                        <div class="bottomFont2"><a href="#"><i class="fa-brands fa-twitter"
+                        <div class="bottomFont2"><a href="https://twitter.com/universityhalic"><i class="fa-brands fa-twitter"
                                     style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
-                        <div class="bottomFont2"><a href="#"><i class="fa-brands fa-youtube"
+                        <div class="bottomFont2"><a href="https://www.youtube.com/channel/UCnq6yj7ENKOnHEcvQ9GDGYA"><i class="fa-brands fa-youtube"
                                     style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
-                        <div class="bottomFont2"><a href="#"><i class="fa-brands fa-instagram"
+                        <div class="bottomFont2"><a href="https://www.instagram.com/halicedu/"><i class="fa-brands fa-instagram"
                                     style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
                     </div>
                 </div>

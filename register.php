@@ -56,27 +56,47 @@ $conn->close();
     <title>Register</title>
     <style>
         body {
+            font-family: Consolas, monospace;
             margin: 0;
-            background-color: #f0f0f0;
-        }
-
-        .container {
+            padding: 0;
+            background: url('assets\\hero-1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('assets\\hero-1.jpg');
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/hero-1.jpg') no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
+            opacity: 0.9; /* Adjust the opacity as needed */
+            filter: blur(10px); /* Adjust the blur as needed */
+            z-index: -1;
         }
 
+        .container {
+            width: 800px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
         .form-container {
-            background-color: rgba(255, 255, 255, 0.8); /* Arkaplanı %80 şeffaf beyaz yapar */
+            background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             padding: 40px;
             width: 300px;
             margin: 0 auto; /* Form container'ı sayfanın ortasına hizala */
+            color: #fff;
         }
 
         .form-container h2 {
@@ -113,6 +133,29 @@ $conn->close();
         .form-group input[type="submit"]:hover {
             background-color:  red;
         }
+
+        .form-group p {
+            color: #fff; /* White text color */
+        }
+
+        .form-group p a {
+            color: red; /* White text color for link */
+            text-decoration: none;
+        }
+
+        .form-group p a:hover {
+            text-decoration: underline;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 150px; /* Adjust the width as needed */
+            height: auto;
+        }
     </style>
 </head>
 
@@ -120,6 +163,9 @@ $conn->close();
 <body>
     <div class="container">
         <div class="form-container">
+        <div class="logo-container">
+                <img src="assets/logo.png" alt="Logo">
+            </div>
             <h2>Register</h2>
             <form action="register.php" method="POST">
                 <div class="form-group">

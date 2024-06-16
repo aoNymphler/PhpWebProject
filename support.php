@@ -89,7 +89,7 @@
         .support-form {
             flex: 2;
             background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px;
+            padding: 50px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }

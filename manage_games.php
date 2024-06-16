@@ -7,12 +7,13 @@ if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'admin') {
     exit();
 }
 
-$firstname = $_SESSION['firstname'];
-$lastname = $_SESSION['lastname'];
-
-// Kullanıcıları veritabanından çek
-$sql = "SELECT id, username, firstname, lastname, role FROM users";
-$result = $conn->query($sql);
+// Oyun ve kategorilerini çek
+$games_sql = "
+    SELECT games.id, games.title, games.description, games.image_url, categories.name AS category
+    FROM games
+    LEFT JOIN categories ON games.category_id = categories.id
+";
+$games_result = $conn->query($games_sql);
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Paneli</title>
+    <title>Oyunları Yönet</title>
     <link rel="stylesheet" href="./css/admin_panel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 </head>
@@ -30,7 +31,7 @@ $result = $conn->query($sql);
             <img src="./assets/logo.png" alt="Logo" style="width:215px; margin-top:20px">
         </div>
         <div class="profile">
-            <h2><?php echo htmlspecialchars($firstname . ' ' . $lastname); ?></h2>
+            <h2><?php echo htmlspecialchars($_SESSION['firstname'] . ' ' . $_SESSION['lastname']); ?></h2>
             <p>Admin</p>
         </div>
         <nav>
@@ -44,44 +45,39 @@ $result = $conn->query($sql);
     </div>
     <div class="main-content">
         <header>
-            <h1>Admin Paneli</h1>
+            <h1>Oyunları Yönet</h1>
         </header>
         <main>
+            <h2>Mevcut Oyunlar</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Kullanıcı Adı</th>
-                        <th>Ad</th>
-                        <th>Soyad</th>
-                        <th>Rol</th>
+                        <th>Oyun Adı</th>
+                        <th>Açıklama</th>
+                        <th>Görsel</th>
+                        <th>Kategori</th>
                         <th>İşlemler</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if ($result->num_rows > 0): ?>
-                        <?php while($row = $result->fetch_assoc()): ?>
+                    <?php if ($games_result->num_rows > 0): ?>
+                        <?php while($game = $games_result->fetch_assoc()): ?>
                             <tr>
-                                <td><?php echo $row['id']; ?></td>
-                                <td><?php echo $row['username']; ?></td>
-                                <td><?php echo $row['firstname']; ?></td>
-                                <td><?php echo $row['lastname']; ?></td>
-                                <td><?php echo $row['role']; ?></td>
+                                <td><?php echo htmlspecialchars($game['title']); ?></td>
+                                <td><?php echo htmlspecialchars($game['description']); ?></td>
+                                <td><img src="<?php echo htmlspecialchars($game['image_url']); ?>" alt="<?php echo htmlspecialchars($game['title']); ?>" width="50"></td>
+                                <td><?php echo htmlspecialchars($game['category']); ?></td>
                                 <td>
-                                    <form method="POST" action="delete_user.php" style="display:inline;">
-                                        <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
+                                    <form method="POST" action="delete_game.php">
+                                        <input type="hidden" name="game_id" value="<?php echo $game['id']; ?>">
                                         <button type="submit" class="delete-button">Sil</button>
-                                    </form>
-                                    <form method="GET" action="manage_user_games.php" style="display:inline;">
-                                        <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-                                        <button type="submit" class="manage-button">Yönet</button>
                                     </form>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="6">Hiç kullanıcı bulunamadı.</td>
+                            <td colspan="5">Hiç oyun bulunamadı.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

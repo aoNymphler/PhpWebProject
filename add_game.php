@@ -52,9 +52,12 @@ $category_result = $conn->query($category_sql);
                 <form action="add_game.php" method="POST" enctype="multipart/form-data">
                     <label for="title">Oyun Başlığı:</label>
                     <input type="text" id="title" name="title" required><br><br>
-                    
+
                     <label for="description">Açıklama:</label>
                     <textarea id="description" name="description" required></textarea><br><br>
+                    
+                    <label for="video">Video URL:</label>
+                    <textarea id="video" name="video" required></textarea><br><br>
                     
                     <label for="image">Resim:</label>
                     <input type="file" id="image" name="image" accept="image/*" required><br><br>
@@ -81,6 +84,7 @@ $category_result = $conn->query($category_sql);
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
+    $video = $_POST['video'];
     $description = $_POST['description'];
     $price = $_POST['price'];
     $category_id = $_POST['category_id'];
@@ -121,9 +125,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
             $image_url = $target_file;
 
-            $sql = "INSERT INTO games (title, description, price, image_url, category_id) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO games (title, video, description, price, image_url, category_id ) VALUES ( ?,?, ?, ?, ? ,?)";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssdsi", $title, $description, $price, $image_url, $category_id);
+            $stmt->bind_param("sssdsi", $title, $video, $description, $price, $image_url, $category_id);
             $stmt->execute();
             $stmt->close();
 

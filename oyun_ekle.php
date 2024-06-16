@@ -52,9 +52,12 @@ $category_result = $conn->query($category_sql);
                 <form action="add_game.php" method="POST" enctype="multipart/form-data">
                     <label for="title">Oyun Başlığı:</label>
                     <input type="text" id="title" name="title" required><br><br>
-                    
+
                     <label for="description">Açıklama:</label>
                     <textarea id="description" name="description" required></textarea><br><br>
+                    
+                    <label for="video">Video URL:</label>
+                    <textarea id="video" name="video" required></textarea><br><br>
                     
                     <label for="image">Resim:</label>
                     <input type="file" id="image" name="image" accept="image/*" required><br><br>

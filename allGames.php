@@ -42,10 +42,8 @@ while ($row = $games_result->fetch_assoc()) {
 $games_result->close();
 $conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <title>Halic University</title>
     <meta charset="UTF-8">
@@ -65,7 +63,6 @@ $conn->close();
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@300&display=swap"
         rel="stylesheet">
 </head>
-
 <body>
     <div class="container">
         <div class="area">
@@ -102,7 +99,9 @@ $conn->close();
                     <div class="imagesdivpositionmainbox99">
                         <?php foreach ($category_games as $game): ?>
                             <div class="game" style="display: inline-block; margin: 20px;">
-                                <img src="<?php echo htmlspecialchars($game['image_url']); ?>" class="imagebox2" alt="<?php echo htmlspecialchars($game['title']); ?>">
+                                <a href="gameInfo.php?game_id=<?php echo $game['id']; ?>">
+                                    <img src="<?php echo htmlspecialchars($game['image_url']); ?>" class="imagebox2" alt="<?php echo htmlspecialchars($game['title']); ?>">
+                                </a>
                                 <div>
                                     <i class="fa-regular fa-clock fa-sm" style="color: #5c5c5c; display: inline-block;"></i>
                                     <span class="font9Price"><?php echo htmlspecialchars($game['price']); ?>$</span>
@@ -122,7 +121,6 @@ $conn->close();
             </div>
         </div>
     </div>
-
     <script>
         function addToCart(gameId) {
             // AJAX isteği göndererek oyunu sepete ekliyoruz
@@ -138,5 +136,4 @@ $conn->close();
         }
     </script>
 </body>
-
 </html>

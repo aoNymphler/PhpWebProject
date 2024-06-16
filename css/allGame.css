@@ -7,26 +7,7 @@ body {
     background-size: cover;
     object-fit: cover;
     color: #fff;
-    opacity: 0.9;
-
 }
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1000%;
-    background: url('../assets/hero-1.jpg') no-repeat center center fixed;
-    object-fit: cover;
-    background-size: cover;
-    opacity: 0.9;
-    filter: blur(20px);
-    z-index: -1;
-}
-
 .category {
     display: none;
 }

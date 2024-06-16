@@ -73,7 +73,6 @@ $user_games_result = $stmt->get_result();
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 50px;
         }
 
         .games {

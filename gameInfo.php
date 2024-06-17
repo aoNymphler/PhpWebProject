@@ -38,7 +38,7 @@ $conn->close();
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-image: url("assets/katana.jpeg");
+            background-image: url("assets/gameınfopıcture/arkaplan.jpg");
             background-size: cover;
             color: #fff;
         }

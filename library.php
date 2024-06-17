@@ -137,7 +137,7 @@ $user_games_result = $stmt->get_result();
                     <div class="game">
                         <img class="image" src="<?php echo htmlspecialchars($game['image_url']); ?>" alt="<?php echo htmlspecialchars($game['title']); ?>">
                         <h2 class="fontTitle"><?php echo htmlspecialchars($game['title']); ?></h2>
-                        <button class="font">START GAME</button>
+                        <button class="font">DOWLOAD</button>
                     </div>
                 <?php endwhile; ?>
             </div>

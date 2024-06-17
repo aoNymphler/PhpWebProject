@@ -36,6 +36,7 @@ CREATE TABLE `cart` (
 
 -- --------------------------------------------------------
 
+
 --
 -- Tablo için tablo yapısı `categories`
 --

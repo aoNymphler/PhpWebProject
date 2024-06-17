@@ -80,6 +80,44 @@ $conn->close();
         .back-button:hover {
             background-color: rgba(0, 0, 0, 0.9);
         }
+
+        .game {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            width: 460px; /* Genişlik */
+            height: 215px; /* Yükseklik */
+        }
+
+        .game img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .add-to-cart {
+    background-color: #800000; /* Bordo */
+    border: 2px solid #800000; /* Bordo */
+    color: #fff; /* Beyaz */
+    padding: 12px 22px; /* Daha büyük padding */
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+}
+
+.add-to-cart:hover {
+    background-color: #000; /* Siyah */
+}
+
+.add-to-cart.added {
+    background-color: #800000; /* Bordo */
+    border-color: #800000; /* Bordo */
+    color: #fff; /* Beyaz */
+}
+
+        
+        
     </style>
 </head>
 <body>
@@ -118,7 +156,7 @@ $conn->close();
                 <h1 id="<?php echo strtolower($category); ?>"><?php echo strtoupper($category); ?></h1>
                 <div class="imagesdivpositionmainbox99">
                     <?php foreach ($category_games as $game): ?>
-                        <div class="game" style="display: inline-block; margin: 20px;">
+                        <div class="game">
                             <a href="gameInfo.php?game_id=<?php echo $game['id']; ?>">
                                 <img src="<?php echo htmlspecialchars($game['image_url']); ?>" class="imagebox2" alt="<?php echo htmlspecialchars($game['title']); ?>">
                             </a>
@@ -129,7 +167,7 @@ $conn->close();
                                 <i class="fa-regular fa-message fa-sm" style="color: #545454;"></i>
                                 <span class="font9">250</span>
                                 <?php if (in_array($game['id'], $purchased_games)): ?>
-                                    <button class="add-to-cart" >Owned</button>
+                                    <button class="add-to-cart" >Add To Cart</button>
                                 <?php else: ?>
                                     <button onclick="addToCart(<?php echo $game['id']; ?>)" class="add-to-cart">Add to Cart</button>
                                 <?php endif; ?>
@@ -142,18 +180,34 @@ $conn->close();
     </div>
 </div>
 <script>
-    function addToCart(gameId) {
-        // AJAX isteği göndererek oyunu sepete ekliyoruz
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", "add_to_cart.php", true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                alert(xhr.responseText); // Sunucudan gelen yanıtı göster
-            }
-        };
-        xhr.send("game_id=" + gameId);
-    }
-</script>
+      function addToCart(gameId) {
+    const button = event.target; // Tıklanan butonun referansını al
+    // AJAX isteği göndererek oyunu sepete ekliyoruz
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "add_to_cart.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            button.innerHTML = "Added"; // Buton metnini "Added" olarak değiştir
+            button.classList.add("added"); // Butonun stiline "added" sınıfını ekle
+
+            // Büyüme animasyonu için
+            button.style.transform = "scale(3.1)";
+
+            setTimeout(function() {
+                // Küçülme animasyonu için
+                button.style.transform = "scale(1)";
+                
+                
+            }, 1500); // 1 saniye süreyle "Added" metnini göster
+
+            alert(xhr.responseText); // Sunucudan gelen yanıtı göster
+        }
+    };
+    xhr.send("game_id=" + gameId);
+}
+
+    </script>
+
 </body>
 </html>

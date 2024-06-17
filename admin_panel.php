@@ -55,7 +55,7 @@ $result = $conn->query($sql);
                         <th>Ad</th>
                         <th>Soyad</th>
                         <th>Rol</th>
-                        <th>İşlemler</th>
+                        <th style="padding-left: 80px;">İşlemler</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,11 +70,11 @@ $result = $conn->query($sql);
                                 <td>
                                     <form method="POST" action="delete_user.php" style="display:inline;">
                                         <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-                                        <button type="submit" class="delete-button">Sil</button>
+                                        <button type="submit" class="delete-button " style="width: 100px; height: 40px; margin-right: 10px;">Sil</button>
                                     </form>
                                     <form method="GET" action="manage_user_games.php" style="display:inline;">
                                         <input type="hidden" name="user_id" value="<?php echo $row['id']; ?>">
-                                        <button type="submit" class="manage-button">Yönet</button>
+                                        <button type="submit" class="manage-button" style="width: 100px; height: 40px;">Yönet</button>
                                     </form>
                                 </td>
                             </tr>

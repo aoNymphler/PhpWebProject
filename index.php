@@ -108,17 +108,16 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                         <p style="transform: skew(15deg)">HOME</p>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <p>TRENDS <i class="fa fa-angle-down fa-xs"></i></p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <p>SUPPORT <i class="fa fa-angle-down fa-xs"></i></p>
-                    </a>
-                </li>
-            </div>
+               <li>
+                <a href="about.php">
+                    <p>ABOUT</p>
+                </a>
+            </li>
+            <li>
+                <a href="support.php">
+                    <p>SUPPORT</p>
+                </a>
+            </li>
         </ul>
     </div>
     <div class="mainPicture">
@@ -377,10 +376,8 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
             <div class="bottomAreaMainDiv">
                 <div class="fdiv1">
                     <img src="./assets/logo.png" style="height: 75px; margin-top: 30px;" />
-                    <p class="bottomFont1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod
-                        tempor
-                        incididunt ut labore et dolore magna aliqua lacus vel facilisis.</p>
+                    <p class="bottomFont1">
+                    An easily accessible and user-friendly platform that appeals to players of all ages and skill levels.</p>
                     <div style="display: inline-block; margin-top: 55px; transform: skew(-15deg); ">
                         <div class="bottomFont2"><a href="https://www.facebook.com/halicedu1998/?locale=tr_TR"><i class="fa-brands fa-facebook-f"
                                     style="color: #ffffff; transform: skew(15deg); "></i></a></div>

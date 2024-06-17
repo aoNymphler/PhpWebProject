@@ -50,29 +50,29 @@ $category_result = $conn->query($category_sql);
             <!-- Oyun Ekleme Formu -->
             <section>
                 <form action="add_game.php" method="POST" enctype="multipart/form-data">
-                    <label for="title">Oyun Başlığı:</label>
-                    <input type="text" id="title" name="title" required><br><br>
+                    <label for="title" style="margin-top: 10px; margin-right: 10px;">Oyun Başlığı:</label>
+                    <input type="text" id="title" name="title" required style="margin-top: 20px; width: 200px; height: 30px;"><br><br>
 
-                    <label for="description">Açıklama:</label>
-                    <textarea id="description" name="description" required></textarea><br><br>
+                    <label for="description" style="margin-top: 10px; margin-right: 35px;" >Açıklama:</label>
+                    <textarea id="description" name="description" required style="margin-top: 7px; width: 200px; height: 40px; padding: 5 10px; line-height: 30px; vertical-align: middle; text-align: left;"></textarea><br><br>
                     
-                    <label for="video">Video URL:</label>
-                    <textarea id="video" name="video" required></textarea><br><br>
+                    <label for="video" style="margin-top: 10px; margin-right: 25px;">Video URL:</label>
+                    <textarea id="video" name="video" required style="margin-top: 7px; width: 200px; height: 40px; padding: 5 10px; line-height: 30px; vertical-align: middle; text-align: left;"></textarea><br><br>
                     
-                    <label for="image">Resim:</label>
-                    <input type="file" id="image" name="image" accept="image/*" required><br><br>
+                    <label for="image" style="margin-top: 10px; margin-right: 60px;">Resim:</label>
+                    <input type="file" id="image" name="image" accept="image/*" required style="margin-top: 10px; width: 300px; height: 40px; padding: 10 10px; line-height: 30px; vertical-align: middle; text-align: left;font-size: 15px;"><br><br>
                     
-                    <label for="price">Fiyat:</label>
-                    <input type="number" id="price" name="price" step="0.01" required><br><br>
+                    <label for="price" style="margin-top: 10px; margin-right: 70px;">Fiyat:</label>
+                    <input type="number" id="price" name="price" step="0.01"  required style="margin-top: 20px; width: 200px; height: 30px;"><br><br>
                     
-                    <label for="category">Kategori:</label>
-                    <select id="category" name="category_id" required>
+                    <label for="category" style="margin-top: 10px; margin-right: 40px;">Kategori:</label>
+                    <select id="category" name="category_id" required style="margin-top: 20px; width: 210px; height: 30px;">
                         <?php while($row = $category_result->fetch_assoc()): ?>
                             <option value="<?php echo $row['id']; ?>"><?php echo htmlspecialchars($row['name']); ?></option>
                         <?php endwhile; ?>
                     </select><br><br>
                     
-                    <button type="submit">Oyun Ekle</button>
+                    <button type="submit" required style="margin-top: 10px; margin-left: 50px;  width: 200px; height: 40px; padding: 5 10px; line-height: 30px; vertical-align: middle; text-align: center;font-size: 15px;">Oyun Ekle</button>
                 </form>
             </section>
         </main>

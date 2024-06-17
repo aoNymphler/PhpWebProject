@@ -54,16 +54,16 @@
         <p>Haliç Üniversitesi Öğrencileri</p>
         
         <h2>Our Team</h2>
-        <p>Haliç Üniversitesi öğrencileri olarak Internet & Web Programming dersi ödevini yapmak amacımız.</p>
+        <p>As students of Haliç University, our goal is to complete the assignment for the Internet & Web Programming course.</p>
         
         <h2>Our Mission</h2>
-        <p>-Kullanıcılarımıza en eğlenceli ve eğitici oyunları sunarak, hem keyifli vakit geçirmelerini hem de yeni beceriler kazanmalarını sağlamak.</p>
-        <p>-Oyun severleri bir araya getiren, bilgi paylaşımı ve etkileşim imkanı sunan bir topluluk oluşturmak.</p>
-        <p>-En yeni ve en kaliteli oyunları kullanıcılarımıza sunarak, onların oyun deneyimini sürekli olarak geliştirmek.</p>
-        <p>-Kullanıcılarımıza güvenli, adil ve keyifli bir oyun ortamı sağlamak.</p>
-        <p>-Oyun dünyasındaki en son yenilikleri takip ederek ve bunları kullanıcılarımıza sunarak, sürekli olarak gelişen ve büyüyen bir platform olmak.</p>
-        <p>-Her yaştan ve her seviyeden oyuncuya hitap eden, kolay erişilebilir ve kullanıcı dostu bir platform sunmak.</p>
-        <p>-Oyunlarla ilgili her türlü konuda kullanıcılara destek olmak ve rehberlik sunmak.</p>
+        <p>- By offering our users the most entertaining and educational games, we aim to ensure they have a fun time while also gaining new skills.</p>
+        <p>-To create a community that brings together game enthusiasts, providing opportunities for knowledge sharing and interaction.</p>
+        <p>-By offering our users the latest and highest quality games, we aim to continuously enhance their gaming experience.</p>
+        <p>-To provide our users with a safe, fair, and enjoyable gaming environment.</p>
+        <p>-By keeping up with the latest innovations in the gaming world and offering them to our users, we aim to be a constantly evolving and growing platform.</p>
+        <p>-To offer an easily accessible and user-friendly platform that appeals to players of all ages and skill levels.</p>
+        <p>-To provide support and guidance to users on all matters related to games.</p>
         
       
     </div>

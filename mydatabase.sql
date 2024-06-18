@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 16 Haz 2024, 04:15:20
+-- Üretim Zamanı: 18 Haz 2024, 23:56:45
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.2.12
 
@@ -35,7 +35,6 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
-
 
 --
 -- Tablo için tablo yapısı `categories`
@@ -111,13 +110,14 @@ INSERT INTO `games` (`id`, `title`, `description`, `video`, `price`, `image_url`
 (27, 'Blasphemous 2', 'Tövbe Eden, Blasphemous 2 nin Mucize ye karşı bitmek bilmeyen bir mücadelede ona bir kez daha katılmasıyla uyanır. Keşfedilmeyi bekleyen gizemler ve sırlar ile dolu tehlikeli yeni bir dünyaya dalıp döngüyü kati olarak sona erdirme arayışın ile aranda duran canavarca düşmanların arasından ilerle.', 'https://www.youtube.com/embed/6C6_dd73NtU?si=BHCceIQoDj-e4JRF', 102.00, 'assets/gameınfopıcture/Blasphemous 2.jpg', 7),
 (28, 'Diablo IV', 'Aksiyon rol yapma macera oyunlarının en iyisi Diablo® IV te Korunak için savaşa katıl. Büyük beğeni toplayan seferi ve yeni sezon içeriğini deneyimle.', 'https://www.youtube.com/embed/mtM0WpHEjWU?si=R3HnxQKonfHhUuH0', 523.00, 'assets/gameınfopıcture/Diablo IV.jpg', 7),
 (29, 'Lost Ark', 'Embark on an odyssey for the Lost Ark in a vast, vibrant world: explore new lands, seek out lost treasures, and test yourself in thrilling action combat in this action-packed free-to-play RPG', 'https://www.youtube.com/embed/Udwbd5X0zbg?si=Ry2u2LWCXrVcC8X2', 1503.00, 'assets/gameınfopıcture/Lost Ark.jpg', 7),
-(30, 'Guild Wars 2', '', 'Guild Wars 2 is an award-winning online roleplaying game with fast-paced action combat, deep character customization, and no subscription fee required. Choose from an arsenal of professions and weapons, explore a vast open world, compete in PVP modes and more. Join over 16 million players now!', 0.00, 'assets/gameınfopıcture/Guild Wars 2.jpg', 8),
+(30, 'Guild Wars 2', '', 'Guild Wars 2 is an award-winning online roleplaying game with fast-paced action combat, deep character customization, and no subscription fee required. Choose from an arsenal of professions and weapons, explore a vast open world, compete in PVP modes and ', 0.00, 'assets/gameınfopıcture/Guild Wars 2.jpg', 8),
 (31, 'FINAL FANTASY XV', 'Take the journey, now in ultimate quality. Boasting a wealth of bonus content and supporting ultra high-resolution graphical options and HDR 10, you can now enjoy the beautiful and carefully-crafted experience of FINAL FANTASY XV like never before', 'https://www.youtube.com/embed/IiI7SMQA59Q?si=wrShAVDHmMMJPy58', 24.00, 'assets/gameınfopıcture/FINAL FANTASY XIV.jpg', 8),
 (32, 'Legend Bowl', 'Legend Bowl is a throwback to the classic 8-bit and 16-bit football games of the past. Take to the gridiron and fight your way to becoming a football legend! Enjoy sim-style gameplay, realistic weather, detailed stats, franchise mode, tournament mode, fully customizable rosters, and much much more!', 'https://www.youtube.com/embed/7NgAihXUUh0?si=X4IYw0iaVCn93LMH', 8.00, 'assets/gameınfopıcture/Legend Bowl.jpg', 8),
 (33, 'Undisputed', 'Become Undisputed in the most authentic boxing game to date! Featuring true to life visuals, bone-jarring action, and more licensed boxers than ever before, Undisputed gives you unprecedented control to master every inch of the ring', 'https://www.youtube.com/embed/PyKMZjEfFms?si=D1Ipl85nBNZraxrx', 15.00, 'assets/gameınfopıcture/Undisputed.jpg', 8),
-(34, 'eFootball 2024', 'En güncel verilerle heyecan dolu futbol klasiği! eFootball™ 2024 te ""gerçek futbol"" coşkusunu yaşayın!', 'https://www.youtube.com/embed/BdyXsZMPjWo?si=Wy9ZT_qZNBn8eL9l', 0.00, 'assets/gameınfopıcture/eFootball 2024.jpg', 9),
+(34, 'eFootball 2024', 'En güncel verilerle heyecan dolu futbol klasiği! eFootball™ 2024 te \"\"gerçek futbol\"\" coşkusunu yaşayın!', 'https://www.youtube.com/embed/BdyXsZMPjWo?si=Wy9ZT_qZNBn8eL9l', 0.00, 'assets/gameınfopıcture/eFootball 2024.jpg', 9),
 (35, 'Dota 2', 'Her gün dünya çapındaki milyonlarca oyuncu yüzden fazla Dota kahramanından birisiyle savaşa giriyor. İster 10 isterseniz 1000 saat oynamış olun; gelen güncellemelerle Dota daki özellikler, oynanış ve karakterler sürekli değişip geliştiğinden, her zaman keşfedilecek yeni şeyler bulabilirsiniz.', 'https://www.youtube.com/embed/-cSFPIwMEq4?si=y70-7KCMy8lzEdNV', 0.00, 'assets/gameınfopıcture/Dota 2.jpg', 9),
 (36, 'Deep Rock Galactic', 'Deep Rock Galactic sert uzay Cücelerinin, %100 yok edilebilir çevrelerin, yöntemsel oluşturulmuş mağaraların ve uzaylı canavarlardan sonsuz sürülerin olduğu bir co-op birinci bilim kurgu FPS oyunudur.', 'https://www.youtube.com/embed/5eUzjWeLU80?si=62HLKZiJnNiVXgY8 ', 0.00, 'assets/gameınfopıcture/Deep Rock Galactic.jpg', 9);
+
 -- --------------------------------------------------------
 
 --
@@ -137,7 +137,32 @@ CREATE TABLE `purchases` (
 
 INSERT INTO `purchases` (`id`, `user_id`, `game_id`, `purchase_date`) VALUES
 (34, 1, 8, '2024-06-16 02:14:09'),
-(35, 1, 7, '2024-06-16 02:14:09');
+(35, 1, 7, '2024-06-16 02:14:09'),
+(36, 1, 1, '2024-06-18 21:13:51'),
+(37, 1, 34, '2024-06-18 21:13:51'),
+(38, 1, 35, '2024-06-18 21:13:51'),
+(39, 1, 36, '2024-06-18 21:13:51');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `support`
+--
+
+CREATE TABLE `support` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `submitted_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Tablo döküm verisi `support`
+--
+
+INSERT INTO `support` (`id`, `name`, `email`, `message`, `submitted_at`) VALUES
+(5, 'Deneme', 'deneme@h', 'Deneme', '2024-06-18 21:53:48');
 
 -- --------------------------------------------------------
 
@@ -210,6 +235,12 @@ ALTER TABLE `purchases`
   ADD KEY `game_id` (`game_id`);
 
 --
+-- Tablo için indeksler `support`
+--
+ALTER TABLE `support`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Tablo için indeksler `users`
 --
 ALTER TABLE `users`
@@ -232,7 +263,7 @@ ALTER TABLE `user_games`
 -- Tablo için AUTO_INCREMENT değeri `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `categories`
@@ -244,13 +275,19 @@ ALTER TABLE `categories`
 -- Tablo için AUTO_INCREMENT değeri `games`
 --
 ALTER TABLE `games`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `support`
+--
+ALTER TABLE `support`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `users`

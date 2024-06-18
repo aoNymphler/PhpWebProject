@@ -1,3 +1,43 @@
+<?php
+session_start();
+require 'db_connect.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    if (empty($name) || empty($email) || empty($message)) {
+        echo "<script>alert('Tüm alanlar doldurulmalıdır.');</script>";
+    } else {
+        $sql = "INSERT INTO support (name, email, message) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+
+        if ($stmt === false) {
+            die('Hazırlama başarısız: ' . htmlspecialchars($conn->error));
+        }
+
+        $bind = $stmt->bind_param("sss", $name, $email, $message);
+        if ($bind === false) {
+            die('Bağlama başarısız: ' . htmlspecialchars($stmt->error));
+        }
+
+        $exec = $stmt->execute();
+        if ($exec) {
+            echo "<script>alert('Mesajınız gönderildi. En kısa sürede size geri döneceğiz.');</script>";
+        } else {
+            echo "<script>alert('Mesajınız gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin.');</script>";
+        }
+
+        $stmt->close();
+    }
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +68,10 @@
             height: 100%;
             background: url('assets/hero-1.jpg') no-repeat center center fixed;
             background-size: cover;
-            opacity: 0.9; /* Adjust the opacity as needed */
-            filter: blur(10px); /* Adjust the blur as needed */
+            opacity: 0.9;
+            filter: blur(10px);
             z-index: -1;
         }
-
-
         .container {
             width: 800px;
             padding: 20px;
@@ -41,7 +79,6 @@
             text-align: center;
             margin-top: 20px;
         }
-
         header {
             background-color: transparent;
             color: white;
@@ -49,18 +86,15 @@
             text-align: center;
             border-radius: 10px 10px 0 0;
         }
-
         header h1 {
             margin: 0;
-            font-size: 20px; 
+            font-size: 20px;
         }
-
         .content {
             display: flex;
             justify-content: space-between;
-            margin-top: 10px; 
+            margin-top: 10px;
         }
-
         .contact-info {
             flex: 1;
             background: rgba(255, 255, 255, 0.1);
@@ -68,24 +102,19 @@
             margin-right: 10px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center; 
+            text-align: center;
         }
-
         .contact-info h2 {
             font-size: 18px;
             margin-top: 0;
-            
         }
-
         .contact-info p {
             line-height: 1.4;
             font-size: 14px;
-
         }
-            .contact-info i {
+        .contact-info i {
             margin-right: 5px;
         }
-        
         .support-form {
             flex: 2;
             background-color: rgba(0, 0, 0, 0.6);
@@ -93,18 +122,15 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
         .support-form h2 {
             font-size: 18px;
             margin-top: 10px;
         }
-
         .support-form label {
             display: block;
             margin-bottom: 5px;
             font-size: 14px;
         }
-
         .support-form input,
         .support-form textarea {
             width: calc(100% - 20px);
@@ -114,12 +140,10 @@
             border-radius: 5px;
             font-size: 14px;
         }
-        
         .support-form textarea {
             height: 100px;
             resize: none;
         }
-
         .support-form button {
             background-color: black;
             color: white;
@@ -129,31 +153,25 @@
             cursor: pointer;
             font-size: 14px;
         }
-
         .support-form button:hover {
             background-color: #555;
         }
     </style>
 </head>
 <body>
-   
     <div class="container">
         <div class="content">
-          
             <div class="support-form">
-                <h2>HOW CAN WE HELP YOU?</h2>
-                <p>If you have any questions or need assistance, please fill out the form below and our support team will get back to you as soon as possible.</p>
-                <form action="#" method="post">
-                    <label for="name">Name:</label>
+                <h2>Size nasıl yardımcı olabiliriz?</h2>
+                <p>Sorularınız veya yardıma ihtiyacınız varsa, lütfen aşağıdaki formu doldurun ve destek ekibimiz en kısa sürede size geri dönecektir.</p>
+                <form action="support.php" method="post">
+                    <label for="name">Ad:</label>
                     <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email:</label>
+                    <label for="email">E-posta:</label>
                     <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message:</label>
+                    <label for="message">Mesaj:</label>
                     <textarea id="message" name="message" rows="6" required></textarea>
-
-                    <button type="submit">Submit</button>
+                    <button type="submit">Gönder</button>
                 </form>
             </div>
         </div>

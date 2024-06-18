@@ -39,6 +39,7 @@ $category_result = $conn->query($category_sql);
                 <li><a href="admin_panel.php"><i class="fas fa-tachometer-alt" style="margin-right:10px"></i> Admin Panel</a></li>
                 <li><a href="oyun_ekle.php"><i class="fas fa-gamepad" style="margin-right:10px"></i> Oyun Ekle</a></li>
                 <li><a href="manage_games.php"><i class="fas fa-list" style="margin-right:10px"></i> Oyunları Yönet</a></li>
+                <li><a href="view_support.php"><i class="fas fa-envelope" style="margin-right:10px"></i> Support Messages</a></li>
             </ul>
         </nav>
     </div>

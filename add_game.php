@@ -3,7 +3,7 @@ session_start();
 require 'db_connect.php';
 
 if (!isset($_SESSION['user']) || $_SESSION['role'] !== 'admin') {
-    header('Location: index.php');
+    header('Location: pages/index.php');
     exit();
 }
 
@@ -35,7 +35,7 @@ $category_result = $conn->query($category_sql);
         </div>
         <nav>
             <ul>
-                <li><a href="index.php"><i class="fas fa-home" style="margin-right:10px"></i> Ana Sayfa</a></li>
+                <li><a href="pages/index.php"><i class="fas fa-home" style="margin-right:10px"></i> Ana Sayfa</a></li>
                 <li><a href="admin_panel.php"><i class="fas fa-tachometer-alt" style="margin-right:10px"></i> Admin Panel</a></li>
                 <li><a href="oyun_ekle.php"><i class="fas fa-gamepad" style="margin-right:10px"></i> Oyun Ekle</a></li>
                 <li><a href="manage_games.php"><i class="fas fa-list" style="margin-right:10px"></i> Oyunları Yönet</a></li>

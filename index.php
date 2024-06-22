@@ -100,7 +100,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                 </li>
                 <li>
                     <a href="library.php" style="width: 110px">
-                        <p>LIBRARY <i class="fa fa-angle-down fa-xs"></i></p>
+                        <p>LIBRARY</p>
                     </a>
                 </li>
                 <li>
@@ -108,16 +108,16 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                         <p style="transform: skew(15deg)">HOME</p>
                     </a>
                 </li>
-               <li>
-                <a href="about.php">
-                    <p>ABOUT</p>
-                </a>
-            </li>
-            <li>
-                <a href="support.php">
-                    <p>SUPPORT</p>
-                </a>
-            </li>
+                <li>
+                    <a href="about.php">
+                        <p>ABOUT</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="support.php">
+                        <p>SUPPORT</p>
+                    </a>
+                </li>
         </ul>
     </div>
     <div class="mainPicture">
@@ -377,16 +377,12 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                 <div class="fdiv1">
                     <img src="./assets/logo.png" style="height: 75px; margin-top: 30px;" />
                     <p class="bottomFont1">
-                    An easily accessible and user-friendly platform that appeals to players of all ages and skill levels.</p>
+                        An easily accessible and user-friendly platform that appeals to players of all ages and skill levels.</p>
                     <div style="display: inline-block; margin-top: 55px; transform: skew(-15deg); ">
-                        <div class="bottomFont2"><a href="https://www.facebook.com/halicedu1998/?locale=tr_TR"><i class="fa-brands fa-facebook-f"
-                                    style="color: #ffffff; transform: skew(15deg); "></i></a></div>
-                        <div class="bottomFont2"><a href="https://twitter.com/universityhalic"><i class="fa-brands fa-twitter"
-                                    style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
-                        <div class="bottomFont2"><a href="https://www.youtube.com/channel/UCnq6yj7ENKOnHEcvQ9GDGYA"><i class="fa-brands fa-youtube"
-                                    style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
-                        <div class="bottomFont2"><a href="https://www.instagram.com/halicedu/"><i class="fa-brands fa-instagram"
-                                    style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
+                        <div class="bottomFont2"><a href="https://www.facebook.com/halicedu1998/?locale=tr_TR"><i class="fa-brands fa-facebook-f" style="color: #ffffff; transform: skew(15deg); "></i></a></div>
+                        <div class="bottomFont2"><a href="https://twitter.com/universityhalic"><i class="fa-brands fa-twitter" style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
+                        <div class="bottomFont2"><a href="https://www.youtube.com/channel/UCnq6yj7ENKOnHEcvQ9GDGYA"><i class="fa-brands fa-youtube" style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
+                        <div class="bottomFont2"><a href="https://www.instagram.com/halicedu/"><i class="fa-brands fa-instagram" style="color: #ffffff;  transform: skew(15deg); "></i></a></div>
                     </div>
                 </div>
                 <div class="fdiv2">
@@ -421,15 +417,14 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
                     <div class="boxB" style="margin-top: 35px;"></div>
                     <i class="font12">TAGS CLOUD </i>
                     <div class="boxfdiv33">
-                        <a href="#" class="boxfdiv3"><span class="font13">Rogue Like</span></a>
-                        <a href="#" class="boxfdiv3"><span class="font13">Free Games</span></a>
-                        <a href="#" class="boxfdiv3"><span class="font13">Fear</span></a><br>
-                        <a href="#" class="boxfdiv3"><span class="font13">Strategy</span></a>
-                        <a href="#" class="boxfdiv3"><span class="font13">Action</span></a><br>
-                        <a href="#" class="boxfdiv3"><span class="font13">Role-Playing</span></a>
-                        <a href="#" class="boxfdiv3"><span class="font13">Survival</span></a>
-
-                        <a href="#" class="boxfdiv3"><span class="font13">Race</span></a>
+                        <a href="allGames.php" class="boxfdiv3"><span class="font13">Rogue Like</span></a>
+                        <a href="allGames.php" class="boxfdiv3"><span class="font13">Free Games</span></a>
+                        <a href="allGames.php" class="boxfdiv3"><span class="font13">Fear</span></a><br>
+                        <a href="allGames.php" class="boxfdiv3"><span class="font13">Strategy</span></a>
+                        <a href="allGames.php" class="boxfdiv3"><span class="font13">Action</span></a><br>
+                        <a href="allGames.php" class="boxfdiv3"><span class="font13">Role-Playing</span></a>
+                        <a href="allGames.php" class="boxfdiv3"><span class="font13">Survival</span></a>
+                        <a href="allGames.php" class="boxfdiv3"><span class="font13">Race</span></a>
                     </div>
                 </div>
             </div>

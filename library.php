@@ -88,8 +88,8 @@ $user_games_result = $stmt->get_result();
         }
 
         .image {
-            width: 200px;
-            height: 200px;
+            width: 460px;
+            height: 215px;
         }
 
         .fontTitleArea {
@@ -121,6 +121,13 @@ $user_games_result = $stmt->get_result();
             padding: 10px 25px;
             color: white;
             border-radius: 15px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .font.inactive {
+            cursor: not-allowed;
+            opacity: 0.5;
         }
     </style>
 </head>
@@ -137,12 +144,31 @@ $user_games_result = $stmt->get_result();
                     <div class="game">
                         <img class="image" src="<?php echo htmlspecialchars($game['image_url']); ?>" alt="<?php echo htmlspecialchars($game['title']); ?>">
                         <h2 class="fontTitle"><?php echo htmlspecialchars($game['title']); ?></h2>
-                        <button class="font">DOWLOAD</button>
+                        <button class="font" onclick="downloadFile('<?php echo htmlspecialchars($game['title']); ?>', this)">DOWNLOAD</button>
                     </div>
                 <?php endwhile; ?>
             </div>
         </div>
     </div>
+    <script>
+        function downloadFile(gameTitle, button) {
+            const content = `Game Title: ${gameTitle}`;
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = gameTitle + '.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Disable the button and change its style
+            button.disabled = true;
+            button.classList.add('inactive');
+            button.textContent = 'DOWNLOADED';
+        }
+    </script>
 </body>
 
 </html>

@@ -85,8 +85,8 @@ $conn->close();
             display: inline-block;
             margin: 20px;
             padding: 20px;
-            width: 460px; /* Genişlik */
-            height: 215px; /* Yükseklik */
+            width: 460px; 
+            height: 215px;
         }
 
         .game img {
@@ -96,10 +96,10 @@ $conn->close();
         }
 
         .add-to-cart {
-    background-color: #800000; /* Bordo */
-    border: 2px solid #800000; /* Bordo */
-    color: #fff; /* Beyaz */
-    padding: 12px 22px; /* Daha büyük padding */
+    background-color: #800000; 
+    border: 2px solid #800000; 
+    color: #fff; 
+    padding: 12px 22px; 
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
@@ -107,13 +107,13 @@ $conn->close();
 }
 
 .add-to-cart:hover {
-    background-color: #000; /* Siyah */
+    background-color: #000;
 }
 
 .add-to-cart.added {
-    background-color: #800000; /* Bordo */
-    border-color: #800000; /* Bordo */
-    color: #fff; /* Beyaz */
+    background-color: #800000;
+    border-color: #800000; 
+    color: #fff; 
 }
 
         

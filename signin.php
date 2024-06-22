@@ -37,8 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $conn->close();
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,29 +49,29 @@ $conn->close();
             font-family: Consolas, monospace;
             margin: 0;
             padding: 0;
-            background: url('assets\\hero-1.jpg') no-repeat center center fixed;
-            background-size: cover;
             color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('assets/hero-1.jpg') no-repeat center center fixed;
-            background-size: cover;
-            opacity: 0.9; /* Adjust the opacity as needed */
-            filter: blur(10px); /* Adjust the blur as needed */
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
             z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            background: no-repeat;
+            background-size: cover;
+            transition: 1s opacity;
         }
-        
 
         .container {
             width: 800px;
@@ -151,9 +149,14 @@ $conn->close();
     </style>
 </head>
 
+<body>
+    <video autoplay muted loop>
+        <source src="assets/videos/Y2meta.app-VJ LOOP--DRAGONZONE-(1080p).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <div class="container">
         <div class="form-container">
-        <div class="logo-container">
+            <div class="logo-container">
                 <img src="assets/logo.png" alt="Logo">
             </div>
             <h2>Sign In</h2>

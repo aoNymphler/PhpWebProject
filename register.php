@@ -44,42 +44,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $conn->close();
 ?>
 
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Kaydol</title>
     <style>
         body {
             font-family: Consolas, monospace;
             margin: 0;
             padding: 0;
-            background: url('assets\\hero-1.jpg') no-repeat center center fixed;
-            background-size: cover;
             color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('assets/hero-1.jpg') no-repeat center center fixed;
-            background-size: cover;
-            opacity: 0.9; /* Adjust the opacity as needed */
-            filter: blur(10px); /* Adjust the blur as needed */
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
             z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            background: no-repeat;
+            background-size: cover;
+            transition: 1s opacity;
         }
 
         .container {
@@ -89,13 +87,14 @@ $conn->close();
             text-align: center;
             margin-top: 20px;
         }
+
         .form-container {
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             padding: 40px;
             width: 300px;
-            margin: 0 auto; /* Form container'ı sayfanın ortasına hizala */
+            margin: 0 auto;
             color: #fff;
         }
 
@@ -106,14 +105,12 @@ $conn->close();
 
         .form-group {
             margin-bottom: 20px;
-            
         }
 
         .form-group label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            
         }
 
         .form-group input {
@@ -121,7 +118,6 @@ $conn->close();
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            
         }
 
         .form-group input[type="submit"] {
@@ -131,15 +127,15 @@ $conn->close();
         }
 
         .form-group input[type="submit"]:hover {
-            background-color:  red;
+            background-color: red;
         }
 
         .form-group p {
-            color: #fff; /* White text color */
+            color: #fff;
         }
 
         .form-group p a {
-            color: red; /* White text color for link */
+            color: red;
             text-decoration: none;
         }
 
@@ -153,52 +149,54 @@ $conn->close();
         }
 
         .logo-container img {
-            width: 150px; /* Adjust the width as needed */
+            width: 150px;
             height: auto;
         }
     </style>
 </head>
 
-
 <body>
+    <video autoplay muted loop>
+        <source src="assets/videos/Y2meta.app-VJ LOOP--DRAGONZONE-(1080p).mp4" type="video/mp4">
+        Tarayıcınız video etiketini desteklemiyor.
+    </video>
     <div class="container">
         <div class="form-container">
-        <div class="logo-container">
+            <div class="logo-container">
                 <img src="assets/logo.png" alt="Logo">
             </div>
-            <h2>Register</h2>
+            <h2>Kaydol</h2>
             <form action="register.php" method="POST">
                 <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+                    <label>İsim</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="İsminizi girin" required>
                 </div>
                 <div class="form-group">
-                    <label>Last Name</label>
-                    <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+                    <label>Soyisim</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Soyisminizi girin" required>
                 </div>
                 <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    <label>Kullanıcı Adı</label>
+                    <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı girin" required>
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <label>Şifre</label>
+                    <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
                 </div>
                 <div class="form-group">
-                    <label>Password Again</label>
-                    <input type="password" id="password_confirm" name="password_confirm" placeholder="Enter your password" required>
+                    <label>Şifreyi Tekrar Girin</label>
+                    <input type="password" id="password_confirm" name="password_confirm" placeholder="Şifrenizi tekrar girin" required>
                 </div>
                 <?php if (isset($error_message)) { echo "<p>$error_message</p>"; } ?>
                 <div class="form-group">
-                    <input type="submit" value="Register">
+                    <input type="submit" value="Kaydol">
                 </div>
                 <div class="form-group">
-                    <p>Have an account? <a href="signin.php">Sign in</a></p>
+                    <p>Hesabınız var mı? <a href="signin.php">Giriş Yap</a></p>
                 </div>
             </form>
         </div>
     </div>
 </body>
-</html>
 
 </html>

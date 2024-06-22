@@ -21,7 +21,7 @@ $current_time = date('H:i'); // Saat formatını ayarlayın
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" contents="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/index3.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
     <link rel="stylesheet" href="./css/owl.theme.default.min.css">
     <link rel="stylesheet" href="./css/owl.carousel.min.css">

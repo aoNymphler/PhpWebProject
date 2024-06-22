@@ -9,23 +9,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lastname = $_POST['lastname'];
 
     if (empty($username) || empty($password) || empty($password_confirm) || empty($firstname) || empty($lastname)) {
-        $error_message = "Tüm alanları doldurun.";
+        $error_message = "Please fill in all fields.";
     } elseif ($password !== $password_confirm) {
-        $error_message = "Şifreler eşleşmiyor.";
+        $error_message = "Passwords do not match.";
     } else {
-        // Kullanıcı adının mevcut olup olmadığını kontrol et
+        // Check if the username already exists
         $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            $error_message = "Bu kullanıcı adı zaten mevcut.";
+            $error_message = "This username is already taken.";
         } else {
-            // Şifreyi hashle
+            // Hash the password
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            // Yeni kullanıcıyı ekle
+            // Insert new user
             $stmt = $conn->prepare("INSERT INTO users (username, password, firstname, lastname, role) VALUES (?, ?, ?, ?, 'user')");
             $stmt->bind_param("ssss", $username, $hashed_password, $firstname, $lastname);
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: signin.php');
                 exit();
             } else {
-                $error_message = "Kayıt sırasında bir hata oluştu.";
+                $error_message = "An error occurred during registration.";
             }
         }
 
@@ -45,12 +45,12 @@ $conn->close();
 ?>
 
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaydol</title>
+    <title>Register</title>
     <style>
         body {
             font-family: Consolas, monospace;
@@ -158,41 +158,41 @@ $conn->close();
 <body>
     <video autoplay muted loop>
         <source src="assets/videos/Y2meta.app-VJ LOOP--DRAGONZONE-(1080p).mp4" type="video/mp4">
-        Tarayıcınız video etiketini desteklemiyor.
+        Your browser does not support the video tag.
     </video>
     <div class="container">
         <div class="form-container">
             <div class="logo-container">
                 <img src="assets/logo.png" alt="Logo">
             </div>
-            <h2>Kaydol</h2>
+            <h2>Register</h2>
             <form action="register.php" method="POST">
                 <div class="form-group">
-                    <label>İsim</label>
-                    <input type="text" id="firstname" name="firstname" placeholder="İsminizi girin" required>
+                    <label>First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
                 </div>
                 <div class="form-group">
-                    <label>Soyisim</label>
-                    <input type="text" id="lastname" name="lastname" placeholder="Soyisminizi girin" required>
+                    <label>Last Name</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
                 </div>
                 <div class="form-group">
-                    <label>Kullanıcı Adı</label>
-                    <input type="text" id="username" name="username" placeholder="Kullanıcı adınızı girin" required>
+                    <label>Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
                 </div>
                 <div class="form-group">
-                    <label>Şifre</label>
-                    <input type="password" id="password" name="password" placeholder="Şifrenizi girin" required>
+                    <label>Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
                 <div class="form-group">
-                    <label>Şifreyi Tekrar Girin</label>
-                    <input type="password" id="password_confirm" name="password_confirm" placeholder="Şifrenizi tekrar girin" required>
+                    <label>Confirm Password</label>
+                    <input type="password" id="password_confirm" name="password_confirm" placeholder="Enter your password again" required>
                 </div>
                 <?php if (isset($error_message)) { echo "<p>$error_message</p>"; } ?>
                 <div class="form-group">
-                    <input type="submit" value="Kaydol">
+                    <input type="submit" value="Register">
                 </div>
                 <div class="form-group">
-                    <p>Hesabınız var mı? <a href="signin.php">Giriş Yap</a></p>
+                    <p>Already have an account? <a href="signin.php">Sign in</a></p>
                 </div>
             </form>
         </div>
